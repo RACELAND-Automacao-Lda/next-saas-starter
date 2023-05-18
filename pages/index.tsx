@@ -11,6 +11,7 @@ import useMySwipeHandlers from 'hooks/useMySwipeHandlers';
 import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Cta';
 import Partners from 'views/HomePage/Partners';
+import Interactive from '/components/Interactive';
 // import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 // import Testimonials from 'views/HomePage/Testimonials';
 
@@ -55,7 +56,9 @@ const Homepage = () => {
         ></SectionSvg>
       </div>
 
-      <div id="section3" {...useMySwipeHandlers('section4', 'section2', true)}></div>
+      <div id="section3" {...useMySwipeHandlers('section4', 'section2', true)}>
+        <Interactive imageUrl1="/icon.svg" imageUrl2="/Homeland.svg"></Interactive>
+      </div>
 
       <div id="section4" {...useMySwipeHandlers('section5', 'section3', true)}>
         <Cta />
