@@ -7,13 +7,15 @@ import Container from 'components/Container';
 import { media } from 'utils/media';
 
 const PARTNER_LOGOS = [
-  'logoipsum-logo-1.svg',
-  'logoipsum-logo-2.svg',
-  'logoipsum-logo-3.svg',
-  'logoipsum-logo-4.svg',
-  'logoipsum-logo-5.svg',
-  'logoipsum-logo-6.svg',
-  'logoipsum-logo-7.svg',
+  '1_Home_assistant.png',
+  '2_KNX.png',
+  '3_Zigbee.png',
+  '4_Zwave.png',
+  '5_Ubiquiti.png',
+  '6_MikroTik.png',
+  '7_Wago.png',
+  '8_Siemens.png',
+  '9_Ubuntu.png',
 ];
 
 export default function Partners() {
@@ -36,7 +38,7 @@ export default function Partners() {
       >
         {PARTNER_LOGOS.map((logo) => (
           <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128} />
+            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={1500} height={1500} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -45,7 +47,7 @@ export default function Partners() {
 }
 
 function normalizePartnerLogoName(logo: string) {
-  return logo.replace('.svg', '');
+  return logo.replace('.png', '');
 }
 
 const Title = styled.h3`
@@ -53,7 +55,6 @@ const Title = styled.h3`
   letter-spacing: 0.02em;
   line-height: 0;
   text-transform: uppercase;
-  margin-bottom: 2rem;
   text-align: center;
   opacity: 0.8;
 
@@ -63,10 +64,12 @@ const Title = styled.h3`
 `;
 
 const PartnersWrapper = styled(Container)`
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+
   .swiper-wrapper {
     will-change: transform;
     transition-timing-function: linear;
-    margin-top: 0.5rem;
     user-select: none;
   }
 
