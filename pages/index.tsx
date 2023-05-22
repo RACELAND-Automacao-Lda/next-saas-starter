@@ -10,7 +10,6 @@ import { EnvVars } from 'env';
 import isMobile from 'hooks/isMobile';
 import useMySwipeHandlers from 'hooks/useMySwipeHandlers';
 import { getAllPosts } from 'utils/postsFetcher';
-import Cta from 'views/HomePage/Cta';
 import Partners from 'views/HomePage/Partners';
 import Interactive from '/components/Interactive';
 // import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
