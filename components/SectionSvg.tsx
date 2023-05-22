@@ -112,7 +112,7 @@ type Props = Pick<SectionSvgProps, 'reversed'>;
 const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 22rem);
+  min-height: calc(100vh - 10rem);
   flex-direction: ${(p: Props) => (p.reversed ? 'row-reverse' : 'row')};
 
   ${media('<=desktop')} {
