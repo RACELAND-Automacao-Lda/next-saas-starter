@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
 import SectionSvgAnimation from 'components/SectionSvgAnimation';
 import SectionSvg from 'components/SectionSvg';
+import SectionBenefits from 'components/SectionBenefits';
 import { EnvVars } from 'env';
 import isMobile from 'hooks/isMobile';
 import useMySwipeHandlers from 'hooks/useMySwipeHandlers';
 import { getAllPosts } from 'utils/postsFetcher';
-import Cta from 'views/HomePage/Cta';
 import Partners from 'views/HomePage/Partners';
 import Interactive from '/components/Interactive';
 // import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
@@ -60,17 +60,14 @@ const Homepage = () => {
         <Interactive imageUrl1="/icon.svg" imageUrl2="/Homeland.svg"></Interactive>
       </div>
 
-      <div id="section4" {...useMySwipeHandlers('section5', 'section3', true)}>
-        <Cta />
-      </div>
-
-      <div id="section5" {...useMySwipeHandlers('', 'section4', false)}>
-        <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-            voluptate quo deleniti animi laboriosam.
-          </p>
-        </BasicSection>
+      <div id="section4" {...useMySwipeHandlers('', 'section3', false)}>
+        <SectionBenefits
+          imageUrl="/4.svg"
+          title1="Porquê ter uma"
+          title2="casa inteligente?"
+          overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+          reversed={true}
+        ></SectionBenefits>
       </div>
     </>
   );
