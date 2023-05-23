@@ -1,0 +1,270 @@
+import NextImage from 'next/image';
+import { PropsWithChildren, useState } from 'react';
+import styled from 'styled-components';
+import { media } from 'utils/media';
+import Collapse from './Collapse';
+
+interface ServiceDropdownProps {
+  isOpen?: boolean;
+  left?: boolean;
+  imagePath?: string;
+  fullImagePath?: string;
+  imageAlt?: string;
+  title?: string;
+  subtitle?: string;
+  dotlist?: string[];
+}
+
+export default function ServiceDropdown({
+  isOpen,
+  left,
+  imagePath,
+  fullImagePath,
+  imageAlt,
+  title,
+  subtitle,
+  dotlist,
+  children,
+}: PropsWithChildren<ServiceDropdownProps>) {
+  const [hasCollapsed, setHasCollapsed] = useState(!isOpen);
+  const isActive = !hasCollapsed;
+  return (
+    <AccordionWrapper>
+      {!isActive ? (
+        <Wrapper left={left} style={{ flexDirection: left ? 'row-reverse' : 'row' }}>
+          <TitleWrapper left={left}>
+            <Title>{title}</Title>
+            <Subtitle>{subtitle}</Subtitle>
+            <StyledList>
+              {dotlist &&
+                dotlist.map((str, index) => (
+                  <ListItem key={index}>
+                    <StyledListDot /> <ListText>{str}</ListText>
+                  </ListItem>
+                ))}
+            </StyledList>
+            <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Saber mais</OpenAnchor>
+          </TitleWrapper>
+          <ImageContainer left={left}>
+            <NextImage src={imagePath} alt={imageAlt} layout="fill" />
+          </ImageContainer>
+        </Wrapper>
+      ) : (
+        <Opened left={left}>
+          <ImageContainerOpened fullImagePath={fullImagePath}>
+            <TitleOpened>{title}</TitleOpened>
+            <SubtitleOpened>{subtitle}</SubtitleOpened>
+            <TextWrapperOpened>
+              {dotlist &&
+                dotlist.map((str, index) => (
+                  <>
+                    <StyledListDot key={index} />
+                    <ListTextOpened>{str}</ListTextOpened>
+                  </>
+                ))}
+            </TextWrapperOpened>
+          </ImageContainerOpened>
+        </Opened>
+      )}
+      <Collapse isOpen={isActive} duration={300}>
+        {children}
+        <CollapseOpened>
+          <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Ver menos</OpenAnchor>
+        </CollapseOpened>
+      </Collapse>
+    </AccordionWrapper>
+  );
+}
+
+const Title = styled.h1`
+  font-size: 3.4rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+`;
+
+const Subtitle = styled.h3`
+  font-size: 1.8rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+`;
+
+const TitleWrapper = styled.div<{ left: boolean }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin-right: ${(p) => (p.left ? '0%' : '5%')};
+  margin-left: ${(p) => (p.left ? '5%' : '0%')};
+`;
+
+const Wrapper = styled.div<{ left: boolean }>`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const ImageContainer = styled.div<{ left: boolean }>`
+  overflow: hidden;
+  position: relative;
+  width: 60%;
+
+  aspect-ratio: 5/2;
+  border-radius: ${(p) => (p.left ? '0rem 2rem 2rem 0rem' : '2rem 0rem 0rem 2rem')};
+  box-shadow: var(--shadow-md);
+  & > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+`;
+
+const Opened = styled.div<{ left: boolean }>`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: ${(p) => (p.left ? 'flex-start' : 'flex-end')};
+`;
+
+const CollapseOpened = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ImageContainerOpened = styled.div<{ fullImagePath: string }>`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  animation: slideInAnimation 0.5s forwards;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(90, 90, 90, 0.7);
+    z-index: 1;
+  }
+
+  background-image: url(${(p) => (p.fullImagePath ? p.fullImagePath : '')});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @keyframes slideInAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+`;
+
+const TitleOpened = styled.h1`
+  font-size: 3.4rem;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 2;
+`;
+
+const SubtitleOpened = styled.h3`
+  font-size: 1.8rem;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 2;
+`;
+
+const TextWrapperOpened = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: white;
+  z-index: 2;
+`;
+
+const OpenAnchor = styled.a`
+  display: inline;
+  width: fit-content;
+  text-decoration: underline;
+  cursor: pointer;
+  background: linear-gradient(rgb(var(--primary)), rgb(var(--primary)));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0px;
+  transition: 100ms;
+  transition-property: background-size, text-decoration, color;
+  color: rgb(var(--primary));
+`;
+
+const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+`;
+
+const ListText = styled.span`
+  color: black;
+  margin-right: 1rem;
+  z-index: 2;
+`;
+
+const ListTextOpened = styled.span`
+  color: white;
+  margin-right: 1rem;
+  z-index: 2;
+`;
+
+// Apply the updated styles to the list items
+const StyledList = styled.ul`
+  padding-left: 0rem;
+  list-style-type: none;
+`;
+
+// Apply the updated styles to the list dots
+const StyledListDot = styled.span`
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: blue;
+  margin-right: 0.5rem;
+`;
+
+const AccordionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: rgb(var(--Background));
+  border-radius: 0.6rem;
+  transition: opacity 0.2s;
+
+  ${media('<=desktop')} {
+    width: 100%;
+  }
+`;
