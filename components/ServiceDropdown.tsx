@@ -1,8 +1,11 @@
 import NextImage from 'next/image';
 import { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
+import DottedList from 'components/DottedList';
+import StyledList from 'components/StyledList';
 import { media } from 'utils/media';
 import Collapse from './Collapse';
+
 
 interface ServiceDropdownProps {
   isOpen?: boolean;
@@ -36,12 +39,7 @@ export default function ServiceDropdown({
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
             <StyledList>
-              {dotlist &&
-                dotlist.map((str, index) => (
-                  <ListItem key={index}>
-                    <StyledListDot /> <ListText>{str}</ListText>
-                  </ListItem>
-                ))}
+             <DottedList isOpened={false} dotlist={dotlist}/>
             </StyledList>
             <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Saber mais</OpenAnchor>
           </TitleWrapper>
@@ -55,13 +53,7 @@ export default function ServiceDropdown({
             <TitleOpened>{title}</TitleOpened>
             <SubtitleOpened>{subtitle}</SubtitleOpened>
             <TextWrapperOpened>
-              {dotlist &&
-                dotlist.map((str, index) => (
-                  <>
-                    <StyledListDot key={index} />
-                    <ListTextOpened>{str}</ListTextOpened>
-                  </>
-                ))}
+              <DottedList isOpened={true} dotlist={dotlist}/>
             </TextWrapperOpened>
           </ImageContainerOpened>
         </Opened>
@@ -96,7 +88,7 @@ const Subtitle = styled.h3`
   -webkit-line-clamp: 1;
 `;
 
-const TitleWrapper = styled.div<{ left: boolean }>`
+const TitleWrapper = styled.div<{ left?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -105,14 +97,14 @@ const TitleWrapper = styled.div<{ left: boolean }>`
   margin-left: ${(p) => (p.left ? '5%' : '0%')};
 `;
 
-const Wrapper = styled.div<{ left: boolean }>`
+const Wrapper = styled.div<{ left?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 `;
 
-const ImageContainer = styled.div<{ left: boolean }>`
+const ImageContainer = styled.div<{ left?: boolean }>`
   overflow: hidden;
   position: relative;
   width: 60%;
@@ -129,7 +121,7 @@ const ImageContainer = styled.div<{ left: boolean }>`
   }
 `;
 
-const Opened = styled.div<{ left: boolean }>`
+const Opened = styled.div<{ left?: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -145,7 +137,7 @@ const CollapseOpened = styled.div`
   align-items: center;
 `;
 
-const ImageContainerOpened = styled.div<{ fullImagePath: string }>`
+const ImageContainerOpened = styled.div<{ fullImagePath?: string }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -221,40 +213,6 @@ const OpenAnchor = styled.a`
   transition: 100ms;
   transition-property: background-size, text-decoration, color;
   color: rgb(var(--primary));
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-`;
-
-const ListText = styled.span`
-  color: black;
-  margin-right: 1rem;
-  z-index: 2;
-`;
-
-const ListTextOpened = styled.span`
-  color: white;
-  margin-right: 1rem;
-  z-index: 2;
-`;
-
-// Apply the updated styles to the list items
-const StyledList = styled.ul`
-  padding-left: 0rem;
-  list-style-type: none;
-`;
-
-// Apply the updated styles to the list dots
-const StyledListDot = styled.span`
-  display: inline-block;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 50%;
-  background-color: blue;
-  margin-right: 0.5rem;
 `;
 
 const AccordionWrapper = styled.div`
