@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/Button';
-import Image from 'next/image';
 
 export interface RedirectButtonProps {
   url: string;
@@ -17,15 +17,18 @@ const RedirectButton: React.FC<RedirectButtonProps> = ({ url, children, svg }) =
     }
   };
 
-  return <ButtonDiv onClick={handleClick}>{children}
-    <ButtonImage src={svg} alt="Homeland" width="150" height="80" />
-  </ButtonDiv>;
+  return (
+    <ButtonDiv onClick={handleClick}>
+      {children}
+      <ButtonImage src={svg} alt="Homeland" width="150" height="80" />
+    </ButtonDiv>
+  );
 };
-
 
 const ButtonDiv = styled.div`
   width: 88%;
   font-weight: bold;
+  cursor: pointer;
   height: 67px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -39,6 +42,5 @@ const ButtonDiv = styled.div`
 const ButtonImage = styled(Image)`
   padding: 15px !important;
 `;
-
 
 export default RedirectButton;
