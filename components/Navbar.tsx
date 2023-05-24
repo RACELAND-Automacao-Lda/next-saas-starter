@@ -12,6 +12,9 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
+import LogoDark from './LogoDark';
+import { useContext } from 'react';
+import { ThemeContext } from '/contexts/ThemeContext';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
 
@@ -64,12 +67,18 @@ export default function Navbar({ items }: NavbarProps) {
   const isNavbarHidden = scrollingDirection === 'down';
   const isTransparent = scrollingDirection === 'none';
 
+  const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
+
+  console.log('themeMode', themeMode);
+
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
+            {themeMode === 'light' && <Logo />}
+            {themeMode === 'dark' && <LogoDark />}
+            Raceland Automação
           </LogoWrapper>
         </NextLink>
         <NavItemList>
@@ -134,6 +143,7 @@ const LogoWrapper = styled.a`
   text-decoration: none;
 
   color: rgb(var(--logoColor));
+  font-size: 20px;
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
@@ -168,7 +178,7 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   top: 0;
   padding: 1.5rem 0;
   width: 100%;
-  height: 8rem;
+  height: 7rem;
   z-index: var(--z-navbar);
 
   background-color: rgb(var(--navbarBackground));

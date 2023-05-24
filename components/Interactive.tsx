@@ -54,7 +54,7 @@ export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<
               </GroupDiv>
             </ContentContainer>
             <ImageContainer>
-              <NewImage src={imageUrl2} width="400" height="600" />
+              <NewImage src={imageUrl2} width="700" height="800" />
             </ImageContainer>
           </SectionSvgWrapper>
         </Stack>
@@ -62,11 +62,6 @@ export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<
     </CtaWrapper>
   );
 }
-
-const Description = styled.div`
-  font-size: 1.8rem;
-  color: rgba(var(--textSecondary), 0.8);
-`;
 
 const ButtonsRedirectGroup = styled.div`
   display: flex;
@@ -133,7 +128,7 @@ const SectionTitleWrapper = styled(Container)`
 const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 22rem);
+  min-height: calc(100vh - 10rem);
   flex-direction: row;
   max-width: 95% !important;
 `;
@@ -182,11 +177,6 @@ const Stack = styled.div`
       margin-top: 2rem;
     }
   }
-`;
-
-const OutlinedButton = styled(Button)`
-  border: 1px solid rgb(var(--textSecondary));
-  color: rgb(var(--textSecondary));
 `;
 
 const CtaWrapper = styled.div`
