@@ -1,17 +1,19 @@
 import NextImage from 'next/image';
 import React from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+import { ThemeContext } from '/contexts/ThemeContext';
 
 const PARTNER_LOGOS = [
   '1_Home_assistant.png',
   '2_KNX.png',
   '3_Zigbee.png',
   '4_Zwave.png',
-  '5_Ubiquiti.png',
+  '5 - Ubiquiti.svg',
   '6_MikroTik.png',
   '7_Wago.png',
   '8_Siemens.png',
@@ -19,6 +21,10 @@ const PARTNER_LOGOS = [
 ];
 
 export default function Partners() {
+  const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
+
+  console.log('themeMode', themeMode);
+
   return (
     <PartnersWrapper>
       <Title>official partners with</Title>
