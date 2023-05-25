@@ -2,17 +2,53 @@ import styled from 'styled-components';
 import DottedList from 'components/DottedList';
 import DropdownSectionSvg from 'components/DropdownSectionSvg';
 import FullPage from 'components/FullPage';
+import HomelandSection from 'components/HomelandSection';
+import SectionBenefits from 'components/SectionBenefits';
 import SectionTitle from 'components/SectionTitle';
+import ServiceCatalog from 'components/ServiceCatalog';
 import ServiceDropdown from 'components/ServiceDropdown';
+import WifiCentral from 'components/WifiCentral';
+import HomelandHeaderSection from 'components/HomelandHeaderSection';
+import HomelandBenefits from 'components/HomelandBenefits';
+
+import lottieJson from '/public/domotica/homeland.json';
 
 export default function FeaturesPage() {
   return (
     <>
       <FullPage title="Features" description="Elit aute do nisi Lorem id ea culpa sint duis eu tempor dolore elit.">
-        <Wrapper>
-          <SectionTitle>Check out this quick introduction</SectionTitle>
+        <HomelandHeaderSection
+          svg={lottieJson}
+          loop={true}
+          title="Homeland"
+          overTitle="A sua casa na palma da sua mão"
+          width={400}
+          height={400}
+          top="0%"
+        ></HomelandHeaderSection>
+
+        <HomelandBenefits
+          image1="/domotica/beneficios/1.svg"
+          title1="HomePage personalizavel"
+          text1="Organize os comandos da forma mais eficiente para si. Junte os seus comandos mais utilizados numa só página, divida os comandos por zonas específicas, ou ambos!"
+          image2="/domotica/beneficios/2.svg"
+          title2="Instalação simples e rápida"
+          text2="Disponível para instalação própria pelo cliente ou através do distribuidor."
+          image3="/domotica/beneficios/3.svg"
+          title3="Use em qualquer lugar"
+          text3="Aceda à sua casa através de qualquer dispositivo. Telemóvel, tablet, portátil, etc, a sua casa estará sempre na ponta dos seus dedos."
+        ></HomelandBenefits>
+        <WifiCentral
+          title="A melhor solução para qualquer caso"
+          image1="/domotica/centralwifi/wifi.svg"
+          image2="/domotica/centralwifi/division.svg"
+          image3="/domotica/centralwifi/central.svg"
+        ></WifiCentral>
+
+        <ServicesWrapper>
+          <SectionTitle style={{ marginTop: '7%' }}>Tudo o que precisa para a sua casa</SectionTitle>
           <ServiceDropdown
-            left={false}
+            reverse={false}
             imagePath="/domotica/services/Iluminacao/Iluminacao.png"
             fullImagePath="/domotica/services/Iluminacao/fulliluminacao.png"
             imageAlt="Iluminação"
@@ -40,7 +76,7 @@ export default function FeaturesPage() {
             ></DropdownSectionSvg>
           </ServiceDropdown>
           <ServiceDropdown
-            left={true}
+            reverse={true}
             imagePath="/domotica/services/seguranca/seguranca.png"
             fullImagePath="/domotica/services/seguranca/fullseguranca.png"
             imageAlt="Segurança"
@@ -68,7 +104,7 @@ export default function FeaturesPage() {
             ></DropdownSectionSvg>
           </ServiceDropdown>
           <ServiceDropdown
-            left={false}
+            reverse={false}
             imagePath="/domotica/services/inteligencia/inteligencia.png"
             fullImagePath="/domotica/services/inteligencia/fullinteligencia.png"
             imageAlt="Inteligência Artificial"
@@ -98,7 +134,7 @@ export default function FeaturesPage() {
             ></DropdownSectionSvg>
           </ServiceDropdown>
           <ServiceDropdown
-            left={true}
+            reverse={true}
             imagePath="/domotica/services/entretenimento/entretenimento.png"
             fullImagePath="/domotica/services/entretenimento/fullentretenimento.png"
             imageAlt="Entretenimento"
@@ -121,7 +157,7 @@ export default function FeaturesPage() {
             ></DropdownSectionSvg>
           </ServiceDropdown>
           <ServiceDropdown
-            left={false}
+            reverse={false}
             imagePath="/domotica/services/climatizacao/climatizacao.png"
             fullImagePath="/domotica/services/climatizacao/fullclimatizacao.png"
             imageAlt="climatizacao"
@@ -145,7 +181,7 @@ export default function FeaturesPage() {
             ></DropdownSectionSvg>
           </ServiceDropdown>
           <ServiceDropdown
-            left={true}
+            reverse={true}
             imagePath="/domotica/services/irrigacao/irrigacao.png"
             fullImagePath="/domotica/services/irrigacao/fullirrigacao.png"
             imageAlt="Irrigação"
@@ -170,7 +206,7 @@ export default function FeaturesPage() {
             ></DropdownSectionSvg>
           </ServiceDropdown>
           <ServiceDropdown
-            left={false}
+            reverse={false}
             imagePath="/domotica/services/zigbee/zigbee.png"
             fullImagePath="/domotica/services/zigbee/fullzigbee.png"
             imageAlt="Zigbee"
@@ -199,7 +235,21 @@ export default function FeaturesPage() {
               reversed={true}
             ></DropdownSectionSvg>
           </ServiceDropdown>
-        </Wrapper>
+        </ServicesWrapper>
+        <ServiceCatalog />
+        <HomelandSection
+          imageUrl="/domotica/Homeland.svg"
+          title="Homeland"
+          subtitle="A sua casa na palma da sua mão"
+          reversed={false}
+        ></HomelandSection>
+        <SectionBenefits
+          imageUrl="/4.svg"
+          title1="Porquê ter uma"
+          title2="casa inteligente?"
+          overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+          reversed={true}
+        ></SectionBenefits>
       </FullPage>
     </>
   );
@@ -226,8 +276,9 @@ const TextWrapperOpened = styled.div`
   z-index: 2;
 `;
 
-const Wrapper = styled.div`
+const ServicesWrapper = styled.div`
   & > *:not(:first-child) {
     margin-top: 10rem;
   }
+  margin-bottom: 10rem;
 `;
