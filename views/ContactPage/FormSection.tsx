@@ -25,7 +25,7 @@ export default function FormSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ subject: 'Email from contact form', ...payload }),
+        body: JSON.stringify({ subject: 'Email de contacto do site Raceland Automação', ...payload }),
       });
 
       if (res.status !== 204) {
@@ -50,30 +50,30 @@ export default function FormSection() {
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {hasErrored && <ErrorMessage>Couldn&apos;t send email. Please try again.</ErrorMessage>}
+        {hasErrored && <ErrorMessage> Não foi possível enviar email. Por favor tente outra vez.</ErrorMessage>}
         <InputGroup>
           <InputStack>
-            {errors.name && <ErrorMessage>Name is required</ErrorMessage>}
-            <Input placeholder="Your Name" id="name" disabled={isDisabled} {...register('name', { required: true })} />
+            {errors.name && <ErrorMessage>Name é necessário</ErrorMessage>}
+            <Input placeholder="Nome" id="name" disabled={isDisabled} {...register('name', { required: true })} />
           </InputStack>
           <InputStack>
-            {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
-            <Input placeholder="Your Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            {errors.email && <ErrorMessage>Email é necessário</ErrorMessage>}
+            <Input placeholder="Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
           </InputStack>
         </InputGroup>
         <InputStack>
-          {errors.description && <ErrorMessage>Description is required</ErrorMessage>}
+          {errors.description && <ErrorMessage>Descrição é necessária</ErrorMessage>}
           <Textarea
             as="textarea"
-            placeholder="Enter Your Message..."
+            placeholder="A sua mensagem"
             id="description"
             disabled={isDisabled}
             {...register('description', { required: true })}
           />
         </InputStack>
-        <Button as="button" type="submit" disabled={isSubmitDisabled}>
-          Send Message
-        </Button>
+        <NewButton as="button" type="submit" disabled={isSubmitDisabled}>
+          Enviar Mensagem
+        </NewButton>
       </Form>
     </Wrapper>
   );
@@ -127,4 +127,8 @@ const ErrorMessage = styled.p`
 const Textarea = styled(Input)`
   width: 100%;
   min-height: 20rem;
+`;
+
+const NewButton = styled(Button)`
+  width: 250px;
 `;

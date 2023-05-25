@@ -40,7 +40,7 @@ export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<
                 <ButtonImage src="/3.svg" alt="Homeland" width="80" height="80" />
                 Tudo o que precisa num só lugar
               </ButtonDiv>
-              <NextLink href="/features" passHref>
+              <NextLink href="/domotic" passHref>
                 <NewButton>Saber Mais</NewButton>
               </NextLink>
               <GroupDiv>

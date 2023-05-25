@@ -44,7 +44,7 @@ const HeaderContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 40rem;
+  min-height: 43vh;
 `;
 
 const Title = styled(SectionTitle)`
