@@ -87,7 +87,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5rem 0;
-  background: white;
 `;
 
 const ContentContainer = styled.div`
@@ -96,7 +95,7 @@ const ContentContainer = styled.div`
   flex-direction: column;
 `;
 
-type Props = Pick<SectionBenefitsProps, 'reversed'>;
+type Props = Pick<HomelandSectionProps, 'reversed'>;
 const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;

@@ -21,11 +21,11 @@ export default function DottedList({ isOpened, dotlist }: DottedListProps) {
 const ListItem = styled.li`
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 `;
 
 const ListText = styled.span<{ isOpened?: boolean }>`
-  color: ${(p) => (p.isOpened ? 'white' : 'black')};
+  font-size: 18px;
   margin-right: 1rem;
   z-index: 2;
 `;
@@ -33,9 +33,9 @@ const ListText = styled.span<{ isOpened?: boolean }>`
 // Apply the updated styles to the list dots
 const StyledListDot = styled.span`
   display: inline-block;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
-  background-color: blue;
+  background-color: #4d91ff;
   margin-right: 0.5rem;
 `;
