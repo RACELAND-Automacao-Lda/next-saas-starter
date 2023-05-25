@@ -4,14 +4,14 @@ import React, { PropsWithChildren } from 'react';
 import Lottie from 'react-lottie-player';
 import styled from 'styled-components';
 import Button from 'components/Button';
+import Container from 'components/Container';
+import OverTitle from 'components/OverTitle';
+import RichText from 'components/RichText';
 import isMobile from 'hooks/isMobile';
 import { media } from 'utils/media';
 import Partners from 'views/HomePage/Partners';
-import Container from './Container';
-import OverTitle from './OverTitle';
-import RichText from './RichText';
 
-export interface HomelandBenefitsProps {
+export interface MobileHomelandBenefitsProps {
   image1: string;
   title1: string;
   text1: string;
@@ -23,7 +23,7 @@ export interface HomelandBenefitsProps {
   text3: string;
 }
 
-export default function HomelandBenefits({
+export default function MobileHomelandBenefits({
   image1,
   title1,
   text1,
@@ -33,7 +33,7 @@ export default function HomelandBenefits({
   image3,
   title3,
   text3,
-}: PropsWithChildren<HomelandBenefitsProps>) {
+}: PropsWithChildren<MobileHomelandBenefitsProps>) {
   return (
     <Wrapper>
       <ContentContainer>
@@ -68,6 +68,7 @@ export default function HomelandBenefits({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 15%;
 `;
 
 const DivisionTitle = styled.h1`
@@ -75,15 +76,19 @@ const DivisionTitle = styled.h1`
   font-size: 24px;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.03em;
   display: inline-block;
+
+  padding: 0 10%;
 `;
 
 const DivisionSubtitle = styled(OverTitle)`
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
+
+  padding: 0 10%;
 `;
 
 const DivisionContainer = styled.div`
@@ -91,20 +96,17 @@ const DivisionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  margin: 0 5rem;
+  width: 100%;
+  height: calc(50vh - 30px);
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  padding: 4rem;
-
-  height: calc(50vh - 10rem);
 `;
 
 const NewImage = styled(NextImage)`
@@ -112,15 +114,10 @@ const NewImage = styled(NextImage)`
   height: 200px;
 `;
 
-const DivisionNewImage = styled(NextImage)`
-  width: 200px;
-  height: 200px;
-`;
-
 const ImageContainer = styled.div`
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   &:before {
     display: block;
     content: '';

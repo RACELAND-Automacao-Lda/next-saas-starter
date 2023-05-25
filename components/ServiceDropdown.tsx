@@ -68,7 +68,7 @@ export default function ServiceDropdown({
 }
 
 const Title = styled.h1`
-  font-size: 3.4rem;
+  font-size: 36px;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,7 +78,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h3`
-  font-size: 1.8rem;
+  font-size: 18px;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -176,7 +176,7 @@ const ImageContainerOpened = styled.div<{ fullImagePath?: string }>`
 `;
 
 const TitleOpened = styled.h1`
-  font-size: 3.4rem;
+  font-size: 36px;
   width: 100%;
   text-align: center;
   color: white;
@@ -184,7 +184,7 @@ const TitleOpened = styled.h1`
 `;
 
 const SubtitleOpened = styled.h3`
-  font-size: 1.8rem;
+  font-size: 18px;
   width: 100%;
   text-align: center;
   color: white;
@@ -201,6 +201,7 @@ const TextWrapperOpened = styled.div`
 `;
 
 const OpenAnchor = styled.a`
+  font-size: 16px;
   display: inline;
   width: fit-content;
   text-decoration: underline;
