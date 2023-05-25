@@ -7,32 +7,27 @@ import Button from 'components/Button';
 import isMobile from 'hooks/isMobile';
 import { media } from 'utils/media';
 import Partners from 'views/HomePage/Partners';
-import Container from './Container';
+import ContainerFull from './ContainerFull';
 import OverTitle from './OverTitle';
 import RichText from './RichText';
 
-export interface SectionBenefitsProps {
+export interface SectionAboutProps {
   imageUrl: string;
-  title1: string;
-  title2: string;
+  title: string;
   overTitle: string;
   reversed?: boolean;
 }
 
-export default function SectionBenefits({ imageUrl, title1, title2, overTitle, reversed }: PropsWithChildren<SectionBenefitsProps>) {
+export default function SectionAbout({ imageUrl, title, overTitle, reversed }: PropsWithChildren<SectionAboutProps>) {
   return (
     <Wrapper>
       <SectionSvgWrapper reversed={reversed}>
         <ContentContainer>
-          <Title>{title1}</Title>
-          <Title>{title2}</Title>
+          <Title>{title}</Title>
           <CustomOverTitle>{overTitle}</CustomOverTitle>
-          <NextLink href="/domotic" passHref>
-            <NewButton>Conhecer benefícios</NewButton>
-          </NextLink>
         </ContentContainer>
         <ImageContainer>
-          <NewImage src={imageUrl} alt={title1} width="500" height="500" />
+          <NewImage src={imageUrl} alt={title} layout="fill" />
         </ImageContainer>
       </SectionSvgWrapper>
     </Wrapper>
@@ -40,48 +35,46 @@ export default function SectionBenefits({ imageUrl, title1, title2, overTitle, r
 }
 
 const Title = styled.h1`
-  font-size: 55px;
+  font-size: 72px;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 2rem;
-  letter-spacing: -0.03em;
-
-  ${media('<=tablet')} {
-    font-size: 4.6rem;
-    margin-bottom: 2rem;
-  }
-`;
-
-const TitleBold = styled(Title)`
-  color: #4d91ff;
+  margin-bottom: 2rem;SectionSvgProps
 `;
 
 const CustomOverTitle = styled(OverTitle)`
   font-size: 16px;
 `;
 
-const NewButton = styled(Button)`
-  margin-top: 50px;
-  width: 295px;
-  font-size: 16px;
+const NewImage = styled(NextImage)`
+  width: 700px;
+  height: 650px;
 `;
 
 const ImageContainer = styled.div`
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   position: relative;
-  height: 100%;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: calc(50%);
+  }
+
+  & > div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  & > div::before {
+    overflow: auto;
+  }
 
   ${media('<=desktop')} {
     width: 100%;
   }
-`;
-
-const NewImage = styled(NextImage)`
-  width: 700px;
-  height: 650px;
 `;
 
 const Wrapper = styled.div`
@@ -95,11 +88,11 @@ const ContentContainer = styled.div`
   flex-direction: column;
 `;
 
-type Props = Pick<SectionBenefitsProps, 'reversed'>;
-const SectionSvgWrapper = styled(Container)`
+type Props = Pick<SectionAboutProps, 'reversed'>;
+const SectionSvgWrapper = styled(ContainerFull)`
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 50rem);
   flex-direction: ${(p: Props) => (p.reversed ? 'row-reverse' : 'row')};
 
   ${media('<=desktop')} {

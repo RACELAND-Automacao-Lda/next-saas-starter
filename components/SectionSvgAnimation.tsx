@@ -38,7 +38,7 @@ export default function SectionSvgAnimation({
         <ContentContainer>
           <Title>{title}</Title>
           <CustomOverTitle>{overTitle}</CustomOverTitle>
-          <NextLink href="/features" passHref>
+          <NextLink href="/domotic" passHref>
             <NewButton>Ver Serviços</NewButton>
           </NextLink>
         </ContentContainer>

@@ -12,7 +12,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 
 .next-light-theme {
-  --background: 251,251,253;
+  --background: 255,255,255;
   --secondBackground: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;

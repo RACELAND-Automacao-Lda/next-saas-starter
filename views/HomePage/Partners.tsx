@@ -9,11 +9,23 @@ import { media } from 'utils/media';
 import { ThemeContext } from '/contexts/ThemeContext';
 
 const PARTNER_LOGOS = [
+  '1_Home_assistant_light.png',
+  '2_KNX.png',
+  '3_Zigbee_light.png',
+  '4_Zwave.png',
+  '5 - Ubiquiti.svg',
+  '6_MikroTik_light.png',
+  '7_Wago.png',
+  '8_Siemens.png',
+  '9_Ubuntu_light.png',
+];
+
+const PARTNER_LOGOS_dark = [
   '1_Home_assistant.png',
   '2_KNX.png',
   '3_Zigbee.png',
   '4_Zwave.png',
-  '5 - Ubiquiti.svg',
+  '5 - Ubiquiti Tema Escuro.svg',
   '6_MikroTik.png',
   '7_Wago.png',
   '8_Siemens.png',
@@ -42,11 +54,18 @@ export default function Partners() {
         }}
         className="swiper-wrapper"
       >
-        {PARTNER_LOGOS.map((logo) => (
-          <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={1500} height={1500} />
-          </SwiperSlide>
-        ))}
+        {themeMode === 'light' &&
+          PARTNER_LOGOS.map((logo) => (
+            <SwiperSlide key={logo}>
+              <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={1500} height={1500} />
+            </SwiperSlide>
+          ))}
+        {themeMode === 'dark' &&
+          PARTNER_LOGOS_dark.map((logo) => (
+            <SwiperSlide key={logo}>
+              <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={1500} height={1500} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </PartnersWrapper>
   );
