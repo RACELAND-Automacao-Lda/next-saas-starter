@@ -87,7 +87,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5rem 0;
-  background: var(--background);
+  background: white;
 `;
 
 const ContentContainer = styled.div`

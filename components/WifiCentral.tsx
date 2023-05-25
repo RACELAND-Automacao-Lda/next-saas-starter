@@ -114,7 +114,7 @@ const NewImage = styled(NextImage)`
 
 const DivisionNewImage = styled(NextImage)`
   width: 70px;
-  height: 65px;
+  height: 70px;
 `;
 
 const ImageContainer = styled.div`

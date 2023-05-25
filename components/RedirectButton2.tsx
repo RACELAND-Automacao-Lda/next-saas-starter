@@ -20,7 +20,7 @@ const RedirectButton: React.FC<RedirectButtonProps> = ({ url, children, svg }) =
   return (
     <ButtonDiv onClick={handleClick}>
       {children}
-      <ButtonImage src={svg} alt="Homeland" width="300" height="100" />
+      <ButtonImage src={svg} alt="Homeland" width="320" height="100" />
     </ButtonDiv>
   );
 };

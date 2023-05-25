@@ -102,9 +102,9 @@ const ContentContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  padding: 10rem;
+  padding: 4rem;
 
-  height: calc(50vh - 5rem);
+  height: calc(50vh - 10rem);
 `;
 
 const NewImage = styled(NextImage)`
@@ -125,5 +125,5 @@ const ImageContainer = styled.div`
     display: block;
     content: '';
   }
-  margin-top: 3rem;
+  margin-top: 0rem;
 `;
