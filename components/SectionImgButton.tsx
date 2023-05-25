@@ -1,25 +1,30 @@
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import React, { PropsWithChildren } from 'react';
-import Lottie from 'react-lottie-player';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import isMobile from 'hooks/isMobile';
 import { media } from 'utils/media';
-import Partners from 'views/HomePage/Partners';
 import Container from './Container';
 import OverTitle from './OverTitle';
-import RichText from './RichText';
 
-export interface SectionBenefitsProps {
+export interface SectionImgButtonProps {
   imageUrl: string;
   title1: string;
   title2: string;
   overTitle: string;
   reversed?: boolean;
+  buttonText: string;
 }
 
-export default function SectionBenefits({ imageUrl, title1, title2, overTitle, reversed }: PropsWithChildren<SectionBenefitsProps>) {
+export default function SectionImgButton({
+  imageUrl,
+  title1,
+  title2,
+  overTitle,
+  reversed,
+  buttonText,
+}: PropsWithChildren<SectionImgButtonProps>) {
   return (
     <Wrapper>
       <SectionSvgWrapper reversed={reversed}>
@@ -27,8 +32,8 @@ export default function SectionBenefits({ imageUrl, title1, title2, overTitle, r
           <Title>{title1}</Title>
           <Title>{title2}</Title>
           <CustomOverTitle>{overTitle}</CustomOverTitle>
-          <NextLink href="/benefits" passHref>
-            <NewButton>Conhecer benefícios</NewButton>
+          <NextLink href="/domotic" passHref>
+            <NewButton>{buttonText}</NewButton>
           </NextLink>
         </ContentContainer>
         <ImageContainer>
@@ -52,12 +57,9 @@ const Title = styled.h1`
   }
 `;
 
-const TitleBold = styled(Title)`
-  color: #4d91ff;
-`;
-
 const CustomOverTitle = styled(OverTitle)`
-  font-size: 16px;
+  font-size: 28px;
+  font-weight: bold;
 `;
 
 const NewButton = styled(Button)`
@@ -95,11 +97,11 @@ const ContentContainer = styled.div`
   flex-direction: column;
 `;
 
-type Props = Pick<SectionBenefitsProps, 'reversed'>;
+type Props = Pick<SectionImgButtonProps, 'reversed'>;
 const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 30rem);
   flex-direction: ${(p: Props) => (p.reversed ? 'row-reverse' : 'row')};
 
   ${media('<=desktop')} {

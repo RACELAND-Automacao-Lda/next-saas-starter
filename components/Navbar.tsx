@@ -2,8 +2,10 @@ import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
+import isMobile from 'hooks/isMobile';
 import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
 import { NavItems, SingleNavItem } from 'types';
 import { media } from 'utils/media';
@@ -13,7 +15,8 @@ import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
 import LogoDark from './LogoDark';
-import { useContext } from 'react';
+import LogoMobile from './mobile/LogoMobile';
+import LogoMobileDark from './mobile/LogoMobileDark';
 import { ThemeContext } from '/contexts/ThemeContext';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
@@ -76,9 +79,18 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            {themeMode === 'light' && <Logo />}
-            {themeMode === 'dark' && <LogoDark />}
-            Raceland Automação
+            {!isMobile() ? (
+              <>
+                {themeMode === 'light' && <Logo />}
+                {themeMode === 'dark' && <LogoDark />}
+                Raceland Automação
+              </>
+            ) : (
+              <>
+                {themeMode === 'light' && <LogoMobile />}
+                {themeMode === 'dark' && <LogoMobileDark />}
+              </>
+            )}
           </LogoWrapper>
         </NextLink>
         <NavItemList>

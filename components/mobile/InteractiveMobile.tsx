@@ -11,33 +11,33 @@ import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
 import RedirectButton from '/components/RedirectButton';
 
-export interface InteractiveProps {
+export interface InteractiveMobileProps {
   imageUrl1: string;
   imageUrl2: string;
 }
 
-export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<SectionSvgProps>) {
+export default function InteractiveMobile({ imageUrl1, imageUrl2 }: PropsWithChildren<InteractiveMobileProps>) {
   return (
     <CtaWrapper>
       <Container>
         <Stack>
           <SectionTitleWrapper>
-            <NImage src={imageUrl1} alt="Homeland" width="65" height="65" />
+            <NImage src={imageUrl1} alt="Homeland" width="200" height="200" />
             <CustomSectionTitle>Homeland</CustomSectionTitle>
           </SectionTitleWrapper>
           <CustomOverTitle>A sua casa na palma da sua mão</CustomOverTitle>
           <SectionSvgWrapper>
             <ContentContainer>
               <ButtonDiv>
-                <ButtonImage src="/1.svg" alt="Homeland" width="80" height="80" />
+                <ButtonImage src="/1.svg" alt="Homeland" width="40" height="40" />
                 Simples, Prático e Seguro
               </ButtonDiv>
               <ButtonDiv>
-                <ButtonImage src="/2.svg" alt="Homeland" width="80" height="80" />
+                <ButtonImage src="/2.svg" alt="Homeland" width="50" height="50" />
                 Controle a sua casa em qualquer lugar
               </ButtonDiv>
               <ButtonDiv>
-                <ButtonImage src="/3.svg" alt="Homeland" width="80" height="80" />
+                <ButtonImage src="/3.svg" alt="Homeland" width="40" height="40" />
                 Tudo o que precisa num só lugar
               </ButtonDiv>
               <NextLink href="/domotic" passHref>
@@ -66,7 +66,7 @@ export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<
 const ButtonsRedirectGroup = styled.div`
   display: flex;
   flex-direction: row;
-  width: 69%;
+  width: 90%;
   height: 60px;
 `;
 const GroupDiv = styled.div`
@@ -77,7 +77,7 @@ const GroupDiv = styled.div`
 `;
 
 const ButtonDiv = styled.div`
-  width: 88%;
+  width: 100%;
   font-weight: bold;
   height: 67px;
   background-color: white;
@@ -91,24 +91,27 @@ const ButtonDiv = styled.div`
 `;
 
 const NewButton = styled(Button)`
-  margin-top: 20px;
-  width: 88%;
+  margin-top: 10px;
+  width: 100%;
   font-size: 16px;
 `;
 
 const CustomSectionTitle = styled(SectionTitle)`
-  font-size: 64px;
+  font-size: 44px;
 `;
 
 const CustomOverTitle = styled(OverTitle)`
-  font-size: 36px;
-  margin-top: 2rem !important;
+  font-size: 16px;
+  margin-top: 1.5rem !important;
+  margin-bottom: 30px;
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const NewImage = styled(NextImage)`
@@ -129,7 +132,7 @@ const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;
   min-height: calc(100vh - 10rem);
-  flex-direction: row;
+  flex-direction: column;
   max-width: 95% !important;
 `;
 
@@ -152,7 +155,8 @@ const NImage = styled(Image)`
 `;
 
 const ButtonImage = styled(Image)`
-  padding: 20px !important;
+  padding: 0 5% !important;
+  max-width: 40% !important;
 `;
 
 const Stack = styled.div`
