@@ -21,12 +21,6 @@ export default function FullPage({ title, description, children }: PropsWithChil
         <meta name="description" content={description} />
       </Head>
       <Wrapper>
-        <HeaderContainer>
-          <FullContainer>
-            <Title>{title}</Title>
-            {description && <Description>{description}</Description>}
-          </FullContainer>
-        </HeaderContainer>
         <FullContainer>
           <ChildrenWrapper>{children}</ChildrenWrapper>
         </FullContainer>
@@ -64,7 +58,4 @@ const Description = styled.div`
   }
 `;
 
-const ChildrenWrapper = styled.div`
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-`;
+const ChildrenWrapper = styled.div``;

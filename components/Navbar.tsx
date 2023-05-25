@@ -64,8 +64,8 @@ export default function Navbar({ items }: NavbarProps) {
     lastScrollY.current = currentScrollY;
   }
 
-  const isNavbarHidden = scrollingDirection === 'down';
-  const isTransparent = scrollingDirection === 'none';
+  const isNavbarHidden = false && scrollingDirection === 'down';
+  const isTransparent = false && scrollingDirection === 'none';
 
   const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
 
@@ -176,9 +176,9 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   display: flex;
   position: sticky;
   top: 0;
-  padding: 1.5rem 0;
+  padding: 0rem 0;
   width: 100%;
-  height: 7rem;
+  height: 60px;
   z-index: var(--z-navbar);
 
   background-color: rgb(var(--navbarBackground));

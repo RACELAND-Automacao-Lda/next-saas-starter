@@ -6,10 +6,9 @@ import StyledList from 'components/StyledList';
 import { media } from 'utils/media';
 import Collapse from './Collapse';
 
-
 interface ServiceDropdownProps {
   isOpen?: boolean;
-  left?: boolean;
+  reverse?: boolean;
   imagePath?: string;
   fullImagePath?: string;
   imageAlt?: string;
@@ -20,7 +19,7 @@ interface ServiceDropdownProps {
 
 export default function ServiceDropdown({
   isOpen,
-  left,
+  reverse,
   imagePath,
   fullImagePath,
   imageAlt,
@@ -34,26 +33,26 @@ export default function ServiceDropdown({
   return (
     <AccordionWrapper>
       {!isActive ? (
-        <Wrapper left={left} style={{ flexDirection: left ? 'row-reverse' : 'row' }}>
-          <TitleWrapper left={left}>
+        <Wrapper reverse={reverse} style={{ flexDirection: reverse ? 'row-reverse' : 'row' }}>
+          <TitleWrapper reverse={reverse}>
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
             <StyledList>
-             <DottedList isOpened={false} dotlist={dotlist}/>
+              <DottedList isOpened={false} dotlist={dotlist} />
             </StyledList>
             <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Saber mais</OpenAnchor>
           </TitleWrapper>
-          <ImageContainer left={left}>
+          <ImageContainer reverse={reverse}>
             <NextImage src={imagePath} alt={imageAlt} layout="fill" />
           </ImageContainer>
         </Wrapper>
       ) : (
-        <Opened left={left}>
+        <Opened reverse={reverse}>
           <ImageContainerOpened fullImagePath={fullImagePath}>
             <TitleOpened>{title}</TitleOpened>
             <SubtitleOpened>{subtitle}</SubtitleOpened>
             <TextWrapperOpened>
-              <DottedList isOpened={true} dotlist={dotlist}/>
+              <DottedList isOpened={true} dotlist={dotlist} />
             </TextWrapperOpened>
           </ImageContainerOpened>
         </Opened>
@@ -88,29 +87,29 @@ const Subtitle = styled.h3`
   -webkit-line-clamp: 1;
 `;
 
-const TitleWrapper = styled.div<{ left?: boolean }>`
+const TitleWrapper = styled.div<{ reverse?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  margin-right: ${(p) => (p.left ? '0%' : '5%')};
-  margin-left: ${(p) => (p.left ? '5%' : '0%')};
+  margin-right: ${(p) => (p.reverse ? '0%' : '5%')};
+  margin-left: ${(p) => (p.reverse ? '5%' : '0%')};
 `;
 
-const Wrapper = styled.div<{ left?: boolean }>`
+const Wrapper = styled.div<{ reverse?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 `;
 
-const ImageContainer = styled.div<{ left?: boolean }>`
+const ImageContainer = styled.div<{ reverse?: boolean }>`
   overflow: hidden;
   position: relative;
   width: 60%;
 
   aspect-ratio: 5/2;
-  border-radius: ${(p) => (p.left ? '0rem 2rem 2rem 0rem' : '2rem 0rem 0rem 2rem')};
+  border-radius: ${(p) => (p.reverse ? '0rem 2rem 2rem 0rem' : '2rem 0rem 0rem 2rem')};
   box-shadow: var(--shadow-md);
   & > div {
     position: absolute;
@@ -121,12 +120,12 @@ const ImageContainer = styled.div<{ left?: boolean }>`
   }
 `;
 
-const Opened = styled.div<{ left?: boolean }>`
+const Opened = styled.div<{ reverse?: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: ${(p) => (p.left ? 'flex-start' : 'flex-end')};
+  align-items: ${(p) => (p.reverse ? 'flex-start' : 'flex-end')};
 `;
 
 const CollapseOpened = styled.div`
