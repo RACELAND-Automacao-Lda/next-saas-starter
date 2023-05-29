@@ -14,11 +14,13 @@ import { ThemeContext } from '/contexts/ThemeContext';
 
 import Footer from 'components/Footer';
 import { GlobalStyle } from 'components/GlobalStyles';
+import FooterMobile from 'components/mobile/FooterMobile';
 import Navbar from 'components/Navbar';
 import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
 import WaveCta from 'components/WaveCta';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
+import isMobile from 'hooks/isMobile';
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
@@ -76,7 +78,15 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} colorMode={themeMode} />
           </TinaEditProvider>
           <WaveCta />
-          <Footer />
+          {!isMobile() ? (
+            <>
+              <Footer />
+            </>
+          ) : (
+            <>
+              <FooterMobile />
+            </>
+          )}
         </Providers>
       </ThemeContext.Provider>
     </>

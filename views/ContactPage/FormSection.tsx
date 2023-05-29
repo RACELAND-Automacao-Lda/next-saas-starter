@@ -1,10 +1,28 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Button from 'components/Button';
 import Input from 'components/Input';
-import { media } from 'utils/media';
+//import { media } from 'utils/media';
 import MailSentState from '../../components/MailSentState';
+
+const media = {
+  tablet: (...args) => css`
+    @media (max-width: 768px) {
+      ${css(...args)}
+    }
+  `,
+  landscape: (...args) => css`
+    @media (orientation: landscape) {
+      ${css(...args)}
+    }
+  `,
+  portrait: (...args) => css`
+    @media (orientation: portrait) {
+      ${css(...args)}
+    }
+  `,
+};
 
 interface EmailPayload {
   name: string;
@@ -54,11 +72,11 @@ export default function FormSection() {
         <InputGroup>
           <InputStack>
             {errors.name && <ErrorMessage>Name é necessário</ErrorMessage>}
-            <Input placeholder="Nome" id="name" disabled={isDisabled} {...register('name', { required: true })} />
+            <NewInput placeholder="Nome" id="name" disabled={isDisabled} {...register('name', { required: true })} />
           </InputStack>
           <InputStack>
             {errors.email && <ErrorMessage>Email é necessário</ErrorMessage>}
-            <Input placeholder="Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            <NewInput placeholder="Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
           </InputStack>
         </InputGroup>
         <InputStack>
@@ -81,12 +99,37 @@ export default function FormSection() {
 
 const Wrapper = styled.div`
   flex: 2;
+
+  ${media.tablet` {
+    & {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  `}
+`;
+
+const NewInput = styled(Input)`
+  ${media.landscape` {
+    & {
+      width: 31vw;
+    }
+  `}
 `;
 
 const Form = styled.form`
   & > * {
     margin-bottom: 2rem;
   }
+  ${media.tablet` {
+    & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  `}
 `;
 
 const InputGroup = styled.div`
@@ -101,13 +144,17 @@ const InputGroup = styled.div`
     flex: 1;
   }
 
-  ${media('<=tablet')} {
+  ${media.tablet` {
     flex-direction: column;
+    width: 100%;
     & > *:first-child {
       margin-right: 0rem;
       margin-bottom: 2rem;
     }
-  }
+    & > * {
+      width: 100%;
+    }
+  `}
 `;
 
 const InputStack = styled.div`
@@ -117,6 +164,9 @@ const InputStack = styled.div`
   & > *:not(:first-child) {
     margin-top: 0.5rem;
   }
+  ${media.tablet` {
+    width: 100%;
+  `}
 `;
 
 const ErrorMessage = styled.p`
