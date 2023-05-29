@@ -4,20 +4,18 @@ import { media } from 'utils/media';
 import Container from '../Container';
 import OverTitle from '../OverTitle';
 
-export interface SectionInovationMobileProps {
+export interface SectionAboutMobileProps {
   title: string;
-  titleBold: string;
   overTitle: string;
 }
 
-export default function SectionInovationMobile({ title, titleBold, overTitle }: PropsWithChildren<SectionInovationMobileProps>) {
+export default function SectionAboutMobile({ title, overTitle }: PropsWithChildren<SectionAboutMobileProps>) {
   return (
     <Wrapper>
       <SectionSvgWrapper>
         <ContentContainer>
           <ContentImage>
             <Title>{title}</Title>
-            <TitleBold>{titleBold}</TitleBold>
             <CustomOverTitle>{overTitle}</CustomOverTitle>
           </ContentImage>
         </ContentContainer>
@@ -29,9 +27,10 @@ export default function SectionInovationMobile({ title, titleBold, overTitle }: 
 const Title = styled.h1`
   font-size: 44px;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.5;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
+  width: 60%;
 
   ${media('<=tablet')} {
     font-size: 4.6rem;
@@ -65,7 +64,7 @@ const ContentContainer = styled.div`
 const ContentImage = styled.div`
   display: flex;
   flex-direction: column;
-  height: 68vw;
+  height: 87vw;
   position: relative;
   justify-content: center;
 
@@ -77,7 +76,7 @@ const ContentImage = styled.div`
     right: 0;
     bottom: 0;
     opacity: 0.15;
-    background-image: url(/inovation.svg);
+    background-image: url(/Logo.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -87,6 +86,6 @@ const ContentImage = styled.div`
 const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 2rem);
+  min-height: calc(100vh - 34rem);
   flex-direction: column;
 `;

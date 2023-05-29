@@ -1,25 +1,28 @@
+import NextLink from 'next/link';
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
+import Button from 'components/Button';
 import { media } from 'utils/media';
 import Container from '../Container';
 import OverTitle from '../OverTitle';
 
-export interface SectionInovationMobileProps {
+export interface SectionBenefitsMobileProps {
   title: string;
-  titleBold: string;
   overTitle: string;
 }
 
-export default function SectionInovationMobile({ title, titleBold, overTitle }: PropsWithChildren<SectionInovationMobileProps>) {
+export default function SectionBenefitsMobile({ title, overTitle }: PropsWithChildren<SectionBenefitsMobileProps>) {
   return (
     <Wrapper>
       <SectionSvgWrapper>
         <ContentContainer>
           <ContentImage>
             <Title>{title}</Title>
-            <TitleBold>{titleBold}</TitleBold>
             <CustomOverTitle>{overTitle}</CustomOverTitle>
           </ContentImage>
+          <NextLink href="/benefits" passHref>
+            <NewButton>Conhecer benefícios</NewButton>
+          </NextLink>
         </ContentContainer>
       </SectionSvgWrapper>
     </Wrapper>
@@ -29,7 +32,7 @@ export default function SectionInovationMobile({ title, titleBold, overTitle }: 
 const Title = styled.h1`
   font-size: 44px;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.5;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
 
@@ -39,8 +42,9 @@ const Title = styled.h1`
   }
 `;
 
-const TitleBold = styled(Title)`
-  color: #4d91ff;
+const NewButton = styled(Button)`
+  width: 295px;
+  font-size: 16px;
 `;
 
 const CustomOverTitle = styled(OverTitle)`
@@ -65,7 +69,7 @@ const ContentContainer = styled.div`
 const ContentImage = styled.div`
   display: flex;
   flex-direction: column;
-  height: 68vw;
+  height: 100vw;
   position: relative;
   justify-content: center;
 
@@ -77,7 +81,7 @@ const ContentImage = styled.div`
     right: 0;
     bottom: 0;
     opacity: 0.15;
-    background-image: url(/inovation.svg);
+    background-image: url(/Cirlce.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

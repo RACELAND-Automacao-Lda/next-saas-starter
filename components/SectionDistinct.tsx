@@ -1,7 +1,7 @@
 import NextImage from 'next/image';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';

@@ -5,6 +5,7 @@ import SectionSvg from 'components/SectionSvg';
 import SectionBenefits from 'components/SectionBenefits';
 import SectionPartnersMobile from 'components/mobile/SectionPartnersMobile';
 import InteractiveMobile from 'components/mobile/InteractiveMobile';
+import SectionBenefitsMobile from 'components/mobile/SectionBenefitsMobile';
 import SectionInovation from 'components/mobile/SectionInovation';
 import { EnvVars } from 'env';
 import isMobile from 'hooks/isMobile';
@@ -78,7 +79,7 @@ const Section1Mobile = () => {
   const swipeHandlers = useMySwipeHandlers('section2', '', -95, -60, true);
 
   return (
-    <div id="section4" {...swipeHandlers}>
+    <div id="section1" {...swipeHandlers}>
       <SectionPartnersMobile title="Raceland Automação" overTitle="Serviços de Automação e Consultoria" />
     </div>
   );
@@ -88,7 +89,7 @@ const Section2Mobile = () => {
   const swipeHandlers = useMySwipeHandlers('section3', 'section1', 60, -50, true);
 
   return (
-    <div id="section4" {...swipeHandlers}>
+    <div id="section2" {...swipeHandlers}>
       <SectionInovation
         title="Nós somos a"
         titleBold="inovação"
@@ -104,6 +105,19 @@ const Section3Mobile = () => {
   return (
     <div id="section3" {...swipeHandlers}>
       <InteractiveMobile imageUrl1="/icon.svg" imageUrl2="/Phone.png"></InteractiveMobile>
+    </div>
+  );
+};
+
+const Section4Mobile = () => {
+  const swipeHandlers = useMySwipeHandlers('', 'section3', +50, -100, true);
+
+  return (
+    <div id="section4" {...swipeHandlers}>
+      <SectionBenefitsMobile
+        title="Porquê ter uma casa inteligente?"
+        overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+      ></SectionBenefitsMobile>
     </div>
   );
 };
@@ -130,6 +144,7 @@ const Homepage = () => {
           <Section1Mobile />
           <Section2Mobile />
           <Section3Mobile />
+          <Section4Mobile />
         </>
       )}
     </>

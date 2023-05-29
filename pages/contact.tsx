@@ -1,65 +1,60 @@
-//import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 import { GoogleMap, Marker, MarkerF, useLoadScript } from '@react-google-maps/api';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
+import ContainerFull from 'components/ContainerFull';
 import Page from 'components/Page';
 import SectionTitle from 'components/SectionTitle';
+import isMobile from 'hooks/isMobile';
 import { media } from 'utils/media';
 import FormSection from 'views/ContactPage/FormSection';
 import InformationSection from 'views/ContactPage/InformationSection';
 
+const libraries = ['places'];
+const mapOptions = {
+  disableDefaultUI: true,
+  clickableIcons: true,
+  scrollwheel: true,
+};
+
 export default function ContactPage() {
   const [lat, setLat] = useState(41.23524698609944);
   const [lng, setLng] = useState(-8.537433518666859);
-
-  const libraries = useMemo(() => ['places'], []);
-  const mapCenter = useMemo(() => ({ lat: lat, lng: lng }), [lat, lng]);
-
+  const mapCenter = useMemo(() => ({ lat, lng }), [lat, lng]);
+  const isMobileDevice = isMobile();
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
     libraries: libraries as any,
   });
 
-  const mapOptions = useMemo<google.maps.MapOptions>(
-    () => ({
-      disableDefaultUI: false,
-      clickableIcons: true,
-      scrollwheel: true,
-    }),
-    [],
-  );
+  useEffect(() => {
+    if (isLoaded) {
+      console.log('Google Maps loaded successfully.');
+    }
+  }, [isLoaded]);
 
   if (!isLoaded) {
     return <p>Loading...</p>;
   }
 
   return (
-    <Page title="Contacte-nos" description="">
-      <ContactContainer>
-        <InformationSection />
-        <FormSection />
-      </ContactContainer>
-      <Title>Visite-nos</Title>
-      <MapContainer>
-        <GoogleMap
-          zoom={17}
-          center={mapCenter}
-          options={mapOptions}
-          mapTypeId={google.maps.MapTypeId.ROADMAP}
-          mapContainerStyle={{ width: '78vw', height: '45vh' }}
-        >
-          <MarkerF position={mapCenter} onLoad={() => console.log('Marker Loaded')} />
-        </GoogleMap>
-      </MapContainer>
-    </Page>
+    <>
+      <Page title="Contactos" description="">
+        <ContactContainer>
+          <InformationSection />
+          <FormSection />
+        </ContactContainer>
+        <Title>Visite-nos</Title>
+        {isMobileDevice ? <Section2Mobile mapCenter={mapCenter} /> : <Section1Mobile mapCenter={mapCenter} />}
+      </Page>
+    </>
   );
 }
 
-// AIzaSyDc-u6Yc8wG6SA3qkdAGtTvRCsI-Ne8I9w
 const ContactContainer = styled.div`
   display: flex;
 
   ${media('<=tablet')} {
+    width: 100%;
     flex-direction: column;
   }
 `;
@@ -68,6 +63,13 @@ const Title = styled(SectionTitle)`
   color: rgb(var(--text));
   margin-bottom: 2rem;
   margin-top: 100px;
+
+  ${media('<=tablet')} {
+    & {
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 const MapContainer = styled.div`
@@ -75,4 +77,42 @@ const MapContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
+
+  ${media('<=tablet')} {
+    & {
+      margin-top: 20px;
+    }
+  }
 `;
+
+function Section1Mobile({ mapCenter }) {
+  return (
+    <MapContainer>
+      <GoogleMap
+        zoom={17}
+        center={mapCenter}
+        options={mapOptions}
+        mapTypeId={google.maps.MapTypeId.ROADMAP}
+        mapContainerStyle={{ width: '78vw', height: '45vh' }}
+      >
+        <MarkerF position={mapCenter} onLoad={() => console.log('Marker Loaded')} />
+      </GoogleMap>
+    </MapContainer>
+  );
+}
+
+function Section2Mobile({ mapCenter }) {
+  return (
+    <MapContainer>
+      <GoogleMap
+        zoom={16}
+        center={mapCenter}
+        options={mapOptions}
+        mapTypeId={google.maps.MapTypeId.ROADMAP}
+        mapContainerStyle={{ width: '100vw', height: '55vh' }}
+      >
+        <MarkerF position={mapCenter} onLoad={() => console.log('Marker Loaded')} />
+      </GoogleMap>
+    </MapContainer>
+  );
+}

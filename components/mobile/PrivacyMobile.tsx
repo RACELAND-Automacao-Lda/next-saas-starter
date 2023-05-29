@@ -8,7 +8,7 @@ import SectionTitle from 'components/SectionTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 
-export default function Privacy() {
+export default function PrivacyMobile() {
   return (
     <>
       <CtaWrapper>
@@ -20,17 +20,25 @@ export default function Privacy() {
             opera através de:
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
-            Produção de bons resultados e melhorar sempre a rentabilidade, mediante uma prestação de serviços que vão ao encontro do
-            esperado pelo cliente;
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            <span>
+              Produção de bons resultados e melhorar sempre a rentabilidade, mediante uma prestação de serviços que vão ao encontro do
+              esperado pelo cliente;
+            </span>
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Promoção de um ambiente de trabalho inspirador que propicie o espírito de equipa, a comunicação aberta e uma mentalidade
             orientada para os processos e para a inovação;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Construção de vantagens competitivas, com base na experiência, no conhecimento e nas qualificações, através do desenvolvimento
             do potencial do seu recurso humano.
           </CustomOverTitle>
@@ -60,32 +68,46 @@ export default function Privacy() {
           </CustomOverTitleBold>
           <SubTitle>Orientação Estratégica</SubTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Apostar na gestão por objetivos, no planeamento e controlo dinâmico do desempenho dos processos e na sua melhoria contínua;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Identificar e avaliar continuamente as necessidades e expectativas dos clientes e outras partes interessadas relevantes, criando
             condições para ir ao seu encontro;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Envolver toda a organização na concretização da nossa Missão, Política e Valores;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Garantir adequada competência dos colaboradores, proporcionando-lhes a formação adequada;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Realizar os nossos serviços em conformidade com todas as disposições legais em vigor;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Pugnar pela ética e respeito nos negócios a realizar;
           </CustomOverTitle>
           <CustomOverTitle>
-            <BulletPoint />
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
             Estimular uma postura de melhoria contínua da organização e SGQ.
           </CustomOverTitle>
           <SubTitle>Objetivos da qualidade</SubTitle>
@@ -99,14 +121,13 @@ export default function Privacy() {
             durante reuniões de gestão, nomeadamente nas de Revisão do Sistema.
           </CustomOverTitle>
           <SubTitle>Política de privacidade da Raceland Automação</SubTitle>
-          <CustomOverTitle>
-            Consulte ainda a nossa política de privacidade,{' '}
+          <CustomOverTitleLink>
+            Consulte ainda a nossa política de privacidade,
             <a href="https://raceland.pt" style={{ color: '#4d91ff' }}>
-              {' '}
               clicando aqui
-            </a>{' '}
+            </a>
             .
-          </CustomOverTitle>
+          </CustomOverTitleLink>
         </ContainerDiv>
       </CtaWrapper>
     </>
@@ -114,21 +135,17 @@ export default function Privacy() {
 }
 
 const CtaWrapper = styled.div`
-  margin-top: 15rem;
-  padding-bottom: 16rem;
-
-  ${media('<=tablet')} {
-    padding-top: 8rem;
-  }
+  margin-top: 10rem;
 `;
 
-const Bold = styled.span`
-  font-weight: bold;
+const SpanBullet = styled.span`
+  margin-top: 6px;
+  width: 4%;
 `;
 
 const BulletPoint = styled.div`
-  width: 12px;
-  height: 12px;
+  width: 9px;
+  height: 9px;
   background-color: #4d91ff;
   border-radius: 50%;
   margin-right: 10px;
@@ -138,10 +155,16 @@ const CustomOverTitle = styled(OverTitle)`
   font-size: 14px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1rem;
   width: 100%;
   justify-content: flex-start;
+`;
+
+const CustomOverTitleLink = styled(OverTitle)`
+  font-size: 14px;
+  margin-bottom: 1rem;
+  width: 100%;
 `;
 
 const CustomOverTitleBold = styled(OverTitle)`
@@ -155,15 +178,17 @@ const SubTitle = styled.div`
   flex-direction: column;
   color: #4d91ff;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 24px;
   width: 100%;
   align-items: flex-start;
-  margin: 2rem 0;
+  margin-bottom: 1rem;
+  margin-top: 5rem;
 `;
 
 const Title = styled(SectionTitle)`
   color: rgb(var(--textPrimary));
   margin-bottom: 4rem;
+  text-align: left !important;
 `;
 
 const ContainerDiv = styled(Container)`

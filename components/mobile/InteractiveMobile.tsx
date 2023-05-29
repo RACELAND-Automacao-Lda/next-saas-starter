@@ -6,10 +6,11 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
+import ContainerFull from 'components/ContainerFull';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
-import RedirectButton from '/components/RedirectButton';
+import RedirectButtonInteractive from '/components/mobile/RedirectButtonInteractive';
 
 export interface InteractiveMobileProps {
   imageUrl1: string;
@@ -22,7 +23,7 @@ export default function InteractiveMobile({ imageUrl1, imageUrl2 }: PropsWithChi
       <Container>
         <Stack>
           <SectionTitleWrapper>
-            <NImage src={imageUrl1} alt="Homeland" width="200" height="200" />
+            <NImage src={imageUrl1} alt="Homeland" width="55" height="55" />
             <CustomSectionTitle>Homeland</CustomSectionTitle>
           </SectionTitleWrapper>
           <CustomOverTitle>A sua casa na palma da sua mão</CustomOverTitle>
@@ -30,31 +31,34 @@ export default function InteractiveMobile({ imageUrl1, imageUrl2 }: PropsWithChi
             <ContentContainer>
               <ButtonDiv>
                 <ButtonImage src="/1.svg" alt="Homeland" width="40" height="40" />
-                Simples, Prático e Seguro
+                <Nspan>Simples, Prático e Seguro</Nspan>
               </ButtonDiv>
               <ButtonDiv>
-                <ButtonImage src="/2.svg" alt="Homeland" width="50" height="50" />
-                Controle a sua casa em qualquer lugar
+                <ButtonImage src="/2.svg" alt="Homeland" width="40" height="40" />
+                <Nspan>Controle a sua casa em qualquer lugar</Nspan>
               </ButtonDiv>
               <ButtonDiv>
                 <ButtonImage src="/3.svg" alt="Homeland" width="40" height="40" />
-                Tudo o que precisa num só lugar
+                <Nspan>Tudo o que precisa num só lugar</Nspan>
               </ButtonDiv>
               <NextLink href="/domotic" passHref>
-                <NewButton>Saber Mais</NewButton>
+                <NewButton>Saiba Mais</NewButton>
               </NextLink>
               <GroupDiv>
                 <ButtonsRedirectGroup>
-                  <RedirectButton
+                  <RedirectButtonInteractive
                     url="https://play.google.com/store/apps/details?id=io.homeland.companion.android&hl=pt-PT"
                     svg="/Google Play.png"
-                  ></RedirectButton>
-                  <RedirectButton url="https://apps.apple.com/pt/app/homeland/id1658547571" svg="/App Store.png"></RedirectButton>
+                  ></RedirectButtonInteractive>
+                  <RedirectButtonInteractive
+                    url="https://apps.apple.com/pt/app/homeland/id1658547571"
+                    svg="/App Store.png"
+                  ></RedirectButtonInteractive>
                 </ButtonsRedirectGroup>
               </GroupDiv>
             </ContentContainer>
             <ImageContainer>
-              <NewImage src={imageUrl2} width="700" height="800" />
+              <NextImage src={imageUrl2} width="342" height="342" />
             </ImageContainer>
           </SectionSvgWrapper>
         </Stack>
@@ -66,28 +70,39 @@ export default function InteractiveMobile({ imageUrl1, imageUrl2 }: PropsWithChi
 const ButtonsRedirectGroup = styled.div`
   display: flex;
   flex-direction: row;
-  width: 90%;
+  justify-content: space-between;
+  width: 100%;
   height: 60px;
+  margin-bottom: 30px;
 `;
 const GroupDiv = styled.div`
   display: flex;
   justify-content: center;
-  width: 88%;
-  margin-top: 20px;
+  width: 100%;
+  margin-top: 50px;
 `;
 
 const ButtonDiv = styled.div`
   width: 100%;
-  font-weight: bold;
   height: 67px;
   background-color: white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 5px;
   color: #3a4658;
   font-size: 16px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+
+  span {
+    overflow: initial;
+  }
+  & > span::before {
+    overflow: initial;
+  }
+  & > span {
+    overflow: initial;
+  }
 `;
 
 const NewButton = styled(Button)`
@@ -112,11 +127,7 @@ const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-const NewImage = styled(NextImage)`
-  width: 700px;
-  height: 650px;
+  width: 95%;
 `;
 
 const SectionTitleWrapper = styled(Container)`
@@ -125,10 +136,11 @@ const SectionTitleWrapper = styled(Container)`
   justify-content: center;
   max-height: 60px;
   flex-direction: row;
-  width: 45%;
+  width: 340px;
+  padding: 0 !important;
 `;
 
-const SectionSvgWrapper = styled(Container)`
+const SectionSvgWrapper = styled(ContainerFull)`
   display: flex;
   align-items: center;
   min-height: calc(100vh - 10rem);
@@ -154,9 +166,14 @@ const NImage = styled(Image)`
   flex: 1;
 `;
 
+const Nspan = styled.span`
+  width: 67%;
+  text-align: left;
+`;
+
 const ButtonImage = styled(Image)`
-  padding: 0 5% !important;
-  max-width: 40% !important;
+  margin-right: 37% !important;
+  padding-left: 15px !important;
 `;
 
 const Stack = styled.div`
