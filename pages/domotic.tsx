@@ -5,8 +5,10 @@ import FullPage from 'components/FullPage';
 import HomelandBenefits from 'components/HomelandBenefits';
 import HomelandHeaderSection from 'components/HomelandHeaderSection';
 import HomelandSection from 'components/HomelandSection';
-import MobileHomelandHeader from 'components/mobile/MobileHomelandHeader';
 import MobileHomelandBenefits from 'components/mobile/MobileHomelandBenefits';
+import MobileHomelandHeader from 'components/mobile/MobileHomelandHeader';
+import MobileServiceDropdown from 'components/mobile/MobileServiceDropdown';
+import MobileWifiCentral from 'components/mobile/MobileWifiCentral';
 import SectionBenefits from 'components/SectionBenefits';
 import SectionTitle from 'components/SectionTitle';
 import ServiceCatalog from 'components/ServiceCatalog';
@@ -15,7 +17,6 @@ import WifiCentral from 'components/WifiCentral';
 import isMobile from 'hooks/isMobile';
 import lottieJson from '/public/domotica/homeland.json';
 import MobileLottieJson from '/public/domotica/HomelandMobile.json';
-import MobileWifiCentral from 'components/mobile/MobileWifiCentral';
 
 export default function FeaturesPage() {
   console.log('Mobile', isMobile());
@@ -50,6 +51,35 @@ export default function FeaturesPage() {
               image1="/domotica/centralwifi/wifi.svg"
               image2="/domotica/centralwifi/central.svg"
             ></MobileWifiCentral>
+            <ServicesWrapper>
+              <SectionTitle style={{ marginTop: '7%' }}>Tudo o que precisa para a sua casa</SectionTitle>
+              <MobileServiceDropdown
+                reverse={false}
+                imagePath="/domotica/services/Iluminacao/Iluminacao.png"
+                fullImagePath="/domotica/services/Iluminacao/fulliluminacao.png"
+                imageAlt="Iluminação"
+                title="Iluminação"
+                subtitle="A melhor forma de dar vida a sua casa"
+                dotlist={['Luzes', 'Persianas', 'Cortinas']}
+              >
+                <Title>Controle a iluminação da melhor forma para si</Title>
+                <DropdownSectionSvg
+                  imageUrl="/domotica/services/Iluminacao/svg/1.svg"
+                  title="A melhor iluminação para a sua rotina"
+                  overTitle1="Com automações de agendamento, pode escolher a iluminação para cada hora do dia."
+                  overTitle2="Os serviços de GPS também oferecem a possibilidade de controlar a iluminação consoante a sua localização."
+                  reversed={false}
+                ></DropdownSectionSvg>
+                <DropdownSectionSvg
+                  imageUrl="/domotica/services/Iluminacao/svg/2.svg"
+                  title="O ambiente certo"
+                  overTitle1="A iluminação tem um enorme impacto no ambiente de cada divisão."
+                  overTitle2="Com os serviços HomeLand pode escolher a iluminação certa para cada situação."
+                  reversed={true}
+                ></DropdownSectionSvg>
+              </MobileServiceDropdown>
+            </ServicesWrapper>
+            <ServiceCatalog />
           </>
         ) : (
           <>
