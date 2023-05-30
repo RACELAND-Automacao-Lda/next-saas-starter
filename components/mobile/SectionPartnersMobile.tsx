@@ -73,6 +73,6 @@ const ContentContainer = styled.div`
 const SectionSvgWrapper = styled(Container)`
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 27rem);
+  min-height: calc(100vh - 30rem);
   flex-direction: column;
 `;
