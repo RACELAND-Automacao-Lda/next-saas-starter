@@ -3,30 +3,33 @@ import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { EnvVars } from 'env';
 import { media } from 'utils/media';
-import ContainerFull from './ContainerFull';
+import Container from './Container';
 import SectionTitle from './SectionTitle';
 
-export interface AboutProps {
+export interface PageProps {
   title: string;
+  description?: string;
 }
 
-export default function AboutUs({ title, children }: PropsWithChildren<AboutProps>) {
+export default function Page({ title, description, children }: PropsWithChildren<PageProps>) {
   return (
     <>
       <Head>
         <title>
           {title} | {EnvVars.SITE_NAME}
         </title>
+        <meta name="description" content={description} />
       </Head>
       <Wrapper>
         <HeaderContainer>
-          <ContainerTitle>
+          <Container>
             <Title>{title}</Title>
-          </ContainerTitle>
+            {description && <Description>{description}</Description>}
+          </Container>
         </HeaderContainer>
-        <ContainerTitle>
+        <Container>
           <ChildrenWrapper>{children}</ChildrenWrapper>
-        </ContainerTitle>
+        </Container>
       </Wrapper>
     </>
   );
@@ -39,24 +42,29 @@ const Wrapper = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  background-image: url(/fading.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 43vh;
+  justify-content: center;
+  background: rgb(var(--secondary));
+  min-height: 40rem;
 `;
 
 const Title = styled(SectionTitle)`
-  color: black;
-  margin-left: 10rem;
-  text-align: start !important;
+  color: rgb(var(--textSecondary));
+  margin-bottom: 2rem;
 `;
 
-const ContainerTitle = styled(ContainerFull)`
-  background: none !important;
+const Description = styled.div`
+  font-size: 1.8rem;
+  color: rgba(var(--textSecondary), 0.8);
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+
+  ${media('<=tablet')} {
+    max-width: 100%;
+  }
 `;
 
 const ChildrenWrapper = styled.div`
+  margin-top: 10rem;
   margin-bottom: 10rem;
 `;

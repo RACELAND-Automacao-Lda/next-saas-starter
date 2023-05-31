@@ -13,6 +13,10 @@ const Input = styled.input`
     outline: none;
     box-shadow: var(--shadow-lg);
   }
+
+  &::placeholder {
+    color: rgb(var(--text));
+  }
 `;
 
 export default Input;

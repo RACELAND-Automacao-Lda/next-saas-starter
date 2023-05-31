@@ -123,6 +123,7 @@ export default function PrivacyMobile() {
           <SubTitle>Política de privacidade da Raceland Automação</SubTitle>
           <CustomOverTitleLink>
             Consulte ainda a nossa política de privacidade,
+            <CustomSpan> </CustomSpan>
             <a href="https://raceland.pt" style={{ color: '#4d91ff' }}>
               clicando aqui
             </a>
@@ -140,6 +141,10 @@ const CtaWrapper = styled.div`
 
 const SpanBullet = styled.span`
   margin-top: 6px;
+`;
+
+const CustomSpan = styled.span`
+  min-width: 5px;
 `;
 
 const BulletPoint = styled.div`

@@ -84,6 +84,7 @@ export default function AboutPage() {
 }
 
 const Wrapper = styled.div`
+  background: rgb(var(--navbarBackground));
   & > :last-child {
     margin-bottom: 15rem;
   }

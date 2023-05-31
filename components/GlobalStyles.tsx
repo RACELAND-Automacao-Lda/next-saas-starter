@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
-  --inputBackground: 45,55,72;
+  --inputBackground: 26,32,44;
   --navbarBackground: 45,55,72;
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
@@ -115,7 +115,7 @@ body {
   line-height: 1.5;
   font-family: var(--font);
   color: rgb(var(--text));
-  background: rgb(var(--background));
+  background: rgb(var(--navbarBackground));
   font-feature-settings: "kern";
 }
 

@@ -2,7 +2,7 @@ import { GoogleMap, Marker, MarkerF, useLoadScript } from '@react-google-maps/ap
 import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import ContainerFull from 'components/ContainerFull';
-import Page from 'components/Page';
+import PageContacts from 'components/PageContacts';
 import SectionTitle from 'components/SectionTitle';
 import isMobile from 'hooks/isMobile';
 import { media } from 'utils/media';
@@ -38,14 +38,14 @@ export default function ContactPage() {
 
   return (
     <>
-      <Page title="Contactos" description="">
+      <PageContacts title="Contactos" description="">
         <ContactContainer>
           <InformationSection />
           <FormSection />
         </ContactContainer>
         <Title>Visite-nos</Title>
         {isMobileDevice ? <Section2Mobile mapCenter={mapCenter} /> : <Section1Mobile mapCenter={mapCenter} />}
-      </Page>
+      </PageContacts>
     </>
   );
 }

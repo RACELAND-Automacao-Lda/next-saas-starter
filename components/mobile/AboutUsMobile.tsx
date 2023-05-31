@@ -20,13 +20,13 @@ export default function AboutUsMobile({ title, children }: PropsWithChildren<Abo
       </Head>
       <Wrapper>
         <HeaderContainer>
-          <ContainerFull>
+          <ContainerTitle>
             <Title>{title}</Title>
-          </ContainerFull>
+          </ContainerTitle>
         </HeaderContainer>
-        <ContainerFull>
+        <ContainerTitle>
           <ChildrenWrapper>{children}</ChildrenWrapper>
-        </ContainerFull>
+        </ContainerTitle>
       </Wrapper>
     </>
   );
@@ -50,6 +50,10 @@ const HeaderContainer = styled.div`
 const Title = styled(SectionTitle)`
   color: black;
   text-align: center !important;
+`;
+
+const ContainerTitle = styled(ContainerFull)`
+  background: none !important;
 `;
 
 const ChildrenWrapper = styled.div``;
