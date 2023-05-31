@@ -65,6 +65,7 @@ const ContentContainer = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
 `;
 
 const ContentImage = styled.div`

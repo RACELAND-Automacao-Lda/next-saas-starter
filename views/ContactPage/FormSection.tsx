@@ -8,12 +8,12 @@ import MailSentState from '../../components/MailSentState';
 
 const media = {
   tablet: (...args) => css`
-    @media (max-width: 768px) {
+    @media (max-width: 870px) {
       ${css(...args)}
     }
   `,
   landscape: (...args) => css`
-    @media (orientation: landscape) {
+    @media only screen and (min-width: 870px) and (max-width: 1150px) and (orientation: landscape) {
       ${css(...args)}
     }
   `,
@@ -99,7 +99,7 @@ export default function FormSection() {
 
 const Wrapper = styled.div`
   flex: 2;
-
+  width: 70%;
   ${media.tablet` {
     & {
       display: flex;
@@ -112,7 +112,7 @@ const Wrapper = styled.div`
 const NewInput = styled(Input)`
   ${media.landscape` {
     & {
-      width: 31vw;
+      width: 27vw;
     }
   `}
 `;

@@ -50,8 +50,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 5rem 0;
-  height: calc(50vh - 6rem);
-  background: rgb(var(--inputBackground));
+  min-height: calc(50vh - 6rem);
+  background: rgb(var(--dropdownColor));
 `;
 
 const ButtonsRedirectGroup = styled.div`
@@ -98,7 +98,6 @@ const SectionTitleWrapper = styled(ContainerFull)`
   flex-direction: row;
   width: 340px;
   padding: 0;
-  margin-left: 3%;
 `;
 
 const SectionSvgWrapper = styled(ContainerFull)`

@@ -42,7 +42,7 @@ export default function FeaturesPage() {
             ></MobileHomelandHeader>
             <MobileHomelandBenefits
               image1="/domotica/beneficios/1.svg"
-              title1="HomePage personalizavel"
+              title1="HomePage personalizável"
               text1="Organize os comandos da forma mais eficiente para si. Junte os seus comandos mais utilizados numa só página, divida os comandos por zonas específicas, ou ambos!"
               image2="/domotica/beneficios/2.svg"
               title2="Instalação simples e rápida"
@@ -57,7 +57,7 @@ export default function FeaturesPage() {
               image2="/domotica/centralwifi/central.svg"
             ></MobileWifiCentral>
             <ServicesWrapper>
-              <SectionTitle style={{ marginTop: '7%', marginLeft: '5%', textAlign: 'left' }}>
+              <SectionTitle style={{ marginTop: '7%', marginLeft: '5%', textAlign: 'left', marginRight: '5%' }}>
                 Tudo o que precisa para a sua casa
               </SectionTitle>
               <MobileServiceDropdown
@@ -67,7 +67,9 @@ export default function FeaturesPage() {
                 subtitle="A melhor forma de dar vida a sua casa"
                 dotlist={['Luzes', 'Persianas', 'Cortinas']}
               >
-                <MobileTitle style={{ marginLeft: '5%', textAlign: 'left' }}>Controle a iluminação da melhor forma para si</MobileTitle>
+                <MobileTitle style={{ marginLeft: '5%', textAlign: 'left', marginRight: '5%' }}>
+                  Controle a iluminação da melhor forma para si
+                </MobileTitle>
 
                 <StyledList style={{ marginLeft: '5%', textAlign: 'left' }}>
                   <DottedList isOpened={false} dotlist={['Interruptores', 'Sensores', 'Aplicação Homeland']} />
@@ -191,7 +193,7 @@ export default function FeaturesPage() {
                 ></MobileDropdownSectionSvg>
                 <MobileDropdownSectionSvg
                   imageUrl="/domotica/services/irrigacao/mobilesvg/2.svg"
-                  title="incorporação LoRa"
+                  title="Incorporação LoRa"
                   overTitle1="A necessidade de conectividade no campo e o alcance de grandes distâncias nas áreas agrícolas representam um grande desafio para a irrigação."
                   overTitle2="Com a utilização da tecnologia LoRa o controlo de sistemas de irrigação é possível até uma distância de 4 quilómetros."
                 ></MobileDropdownSectionSvg>
@@ -209,9 +211,9 @@ export default function FeaturesPage() {
                   dotlist={[
                     'Estende a durabilidade de baterias.',
                     'Economicamente viável.',
-                    'incorporação de uma grande variedade de dispositivos',
-                    'Rapidez de comunicação',
-                    'Segurança de dados',
+                    'Incorporação de uma grande variedade de dispositivos.',
+                    'Rapidez de comunicação.',
+                    'Segurança de dados.',
                   ]}
                 ></MobileDropdownSectionSvg>
                 <MobileDropdownSectionSvg
@@ -411,7 +413,7 @@ export default function FeaturesPage() {
                 ></DropdownSectionSvg>
                 <DropdownSectionSvg
                   imageUrl="/domotica/services/irrigacao/svg/2.svg"
-                  title="incorporação LoRa"
+                  title="Incorporação LoRa"
                   overTitle1="A necessidade de conectividade no campo e o alcance de grandes distâncias nas áreas agrícolas representam um grande desafio para a irrigação."
                   overTitle2="Com a utilização da tecnologia LoRa o controlo de sistemas de irrigação é possível até uma distância de 4 quilómetros."
                   reversed={true}
@@ -432,9 +434,9 @@ export default function FeaturesPage() {
                   dotlist={[
                     'Estende a durabilidade de baterias.',
                     'Economicamente viável.',
-                    'incorporação de uma grande variedade de dispositivos',
-                    'Rapidez de comunicação',
-                    'Segurança de dados',
+                    'Incorporação de uma grande variedade de dispositivos.',
+                    'Rapidez de comunicação.',
+                    'Segurança de dados.',
                   ]}
                   reversed={false}
                 ></DropdownSectionSvg>

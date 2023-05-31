@@ -17,7 +17,7 @@ export default function ServiceCatalog() {
             <CustomSectionTitle>Veja o nosso catálogo de serviços</CustomSectionTitle>
           </SectionTitleWrapper>
 
-          <NextLink href="/features" passHref>
+          <NextLink href="/Catalogo-de-Servicos.pdf" passHref>
             <NewButton>Ver catálogo</NewButton>
           </NextLink>
         </Stack>

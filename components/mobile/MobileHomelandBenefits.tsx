@@ -68,14 +68,14 @@ export default function MobileHomelandBenefits({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 15%;
+  padding: 12% 0;
 `;
 
 const DivisionTitle = styled.h1`
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.5;
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
   display: inline-block;

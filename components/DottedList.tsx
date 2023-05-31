@@ -12,7 +12,10 @@ export default function DottedList({ isOpened, fontSize, dotlist }: DottedListPr
       {dotlist &&
         dotlist.map((str, index) => (
           <ListItem key={index}>
-            <StyledListDot /> <ListText fontSize={fontSize}>{str}</ListText>
+            <StyledListDot />{' '}
+            <ListText fontSize={fontSize} isOpened={isOpened}>
+              {str}
+            </ListText>
           </ListItem>
         ))}
     </>
@@ -25,11 +28,12 @@ const ListItem = styled.li`
   margin-bottom: 0rem;
 `;
 
-const ListText = styled.span<{ fontSize?: string }>`
+const ListText = styled.span<{ fontSize?: string; isOpened?: boolean }>`
   font-size: ${(p) => (p.fontSize ? p.fontSize : '18px')};
-  margin-right: 1rem;
+  margin-right: 3rem;
   z-index: 2;
-  max-width: 90%;
+  max-width: 100%;
+  color: ${(p) => (p.isOpened ? 'white' : 'rgb(var(--text))')};
 `;
 
 // Apply the updated styles to the list dots

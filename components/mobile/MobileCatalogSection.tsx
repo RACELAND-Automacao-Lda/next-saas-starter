@@ -12,7 +12,7 @@ export default function MobileCatalogSection() {
       <CtaWrapper>
         <ContainerDiv>
           <Title>Veja o nosso catálogo de serviços</Title>
-          <NextLink href="/contact" passHref>
+          <NextLink href="/Catalogo-de-Servicos.pdf" passHref>
             <NewButton>Ver catálogo</NewButton>
           </NextLink>
         </ContainerDiv>
@@ -24,7 +24,7 @@ export default function MobileCatalogSection() {
 const CtaWrapper = styled.div`
   background: rgb(var(--secondary));
   margin-top: -1rem;
-  height: 50vh;
+  min-height: 50vh;
   ${media('<=tablet')} {
     padding-top: 8rem;
   }

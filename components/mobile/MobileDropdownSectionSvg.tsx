@@ -55,6 +55,7 @@ const Title = styled.h1`
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-left: 1.2rem;
+  max-width: calc(100% - (50px + 4%));
 `;
 
 const CustomOverTitle = styled(OverTitle)`
@@ -77,6 +78,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  background: rgb(var(--dropdownColor));
 `;
 
 const TitleWrapper = styled.div`

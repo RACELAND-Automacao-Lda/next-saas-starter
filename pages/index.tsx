@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styled from 'styled-components';
 import SectionSvgAnimation from 'components/SectionSvgAnimation';
 import SectionSvg from 'components/SectionSvg';
 import SectionBenefits from 'components/SectionBenefits';
@@ -9,16 +8,13 @@ import SectionBenefitsMobile from 'components/mobile/SectionBenefitsMobile';
 import SectionInovation from 'components/mobile/SectionInovation';
 import { EnvVars } from 'env';
 import isMobile from 'hooks/isMobile';
-import useMySwipeHandlers from 'hooks/useMySwipeHandlers';
 import { getAllPosts } from 'utils/postsFetcher';
 import Interactive from '/components/Interactive';
 import lottieJson from '/public/homepage/Header_3.json';
 
 const Section1 = () => {
-  const swipeHandlers = useMySwipeHandlers('section2', '', -95, -60, true);
-
   return (
-    <div id="section1" {...swipeHandlers}>
+    <div id="section1">
       <SectionSvgAnimation
         svg={lottieJson}
         loop={false}
@@ -33,10 +29,8 @@ const Section1 = () => {
 };
 
 const Section2 = () => {
-  const swipeHandlers = useMySwipeHandlers('section3', 'section1', 60, -50, true);
-
   return (
-    <div id="section2" {...swipeHandlers}>
+    <div id="section2">
       <SectionSvg
         imageUrl="/inovation.svg"
         title="Nós somos a"
@@ -50,20 +44,16 @@ const Section2 = () => {
 };
 
 const Section3 = () => {
-  const swipeHandlers = useMySwipeHandlers('section4', 'section2', +50, -100, true);
-
   return (
-    <div id="section3" {...swipeHandlers}>
+    <div id="section3">
       <Interactive imageUrl1="/icon.svg" imageUrl2="/Homeland.svg"></Interactive>
     </div>
   );
 };
 
 const Section4 = () => {
-  const swipeHandlers = useMySwipeHandlers('', 'section3', 20, 0, false);
-
   return (
-    <div id="section4" {...swipeHandlers}>
+    <div id="section4">
       <SectionBenefits
         imageUrl="/3.png"
         title1="Porquê ter uma"
@@ -76,10 +66,8 @@ const Section4 = () => {
 };
 
 const Section1Mobile = () => {
-  const swipeHandlers = useMySwipeHandlers('section2', '', -15, -150, true);
-
   return (
-    <div id="section1" {...swipeHandlers}>
+    <div id="section1">
       <SectionPartnersMobile title="Raceland Automação" overTitle="Serviços de Automação e Consultoria" />
     </div>
   );

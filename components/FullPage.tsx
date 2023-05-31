@@ -30,7 +30,7 @@ export default function FullPage({ title, description, children }: PropsWithChil
 }
 
 const Wrapper = styled.div`
-  background: rgb(var(--background));
+  background: rgb(var(--navbarBackground));
 `;
 
 const HeaderContainer = styled.div`

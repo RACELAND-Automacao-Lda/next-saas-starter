@@ -75,4 +75,5 @@ const SectionSvgWrapper = styled(Container)`
   align-items: center;
   min-height: calc(100vh - 30rem);
   flex-direction: column;
+  margin-bottom: 5rem;
 `;

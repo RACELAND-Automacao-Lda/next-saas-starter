@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: #243A5A;
+  --dropdownColor: 249, 249, 250;
 }
 
 .next-dark-theme {
@@ -41,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;
+  --dropdownColor: 58,70,88;
 }
 
 :root {

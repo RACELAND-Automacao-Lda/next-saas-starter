@@ -67,6 +67,7 @@ const ContentContainer = styled.div`
   align-items: flex-start;
   margin-left: 3rem;
   margin-right: 3rem;
+  margin-bottom: 5rem;
   height: 50vh;
   justify-content: flex-start;
 `;

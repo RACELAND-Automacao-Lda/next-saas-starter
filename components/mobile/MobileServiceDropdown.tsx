@@ -144,7 +144,7 @@ const AccordionWrapper = styled.div`
 `;
 
 const Background = styled.div`
-  background: rgb(var(--inputBackground));
+  background: rgb(var(--dropdownColor));
   padding-top: 2.5rem;
   padding-bottom: 5rem;
 `;

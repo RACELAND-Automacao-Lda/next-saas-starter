@@ -68,6 +68,7 @@ export default function HomelandBenefits({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  background: rgb(var(--navbarBackground));
 `;
 
 const DivisionTitle = styled.h1`
