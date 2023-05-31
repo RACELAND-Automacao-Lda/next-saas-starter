@@ -76,7 +76,7 @@ const Section4 = () => {
 };
 
 const Section1Mobile = () => {
-  const swipeHandlers = useMySwipeHandlers('section2', '', -95, -60, true);
+  const swipeHandlers = useMySwipeHandlers('section2', '', -15, -150, true);
 
   return (
     <div id="section1" {...swipeHandlers}>
@@ -86,10 +86,8 @@ const Section1Mobile = () => {
 };
 
 const Section2Mobile = () => {
-  const swipeHandlers = useMySwipeHandlers('section3', 'section1', 60, -50, true);
-
   return (
-    <div id="section2" {...swipeHandlers}>
+    <div id="section2">
       <SectionInovation
         title="Nós somos a"
         titleBold="inovação"
@@ -100,20 +98,16 @@ const Section2Mobile = () => {
 };
 
 const Section3Mobile = () => {
-  const swipeHandlers = useMySwipeHandlers('section4', 'section2', +50, -100, true);
-
   return (
-    <div id="section3" {...swipeHandlers}>
+    <div id="section3">
       <InteractiveMobile imageUrl1="/icon.svg" imageUrl2="/Phone.png"></InteractiveMobile>
     </div>
   );
 };
 
 const Section4Mobile = () => {
-  const swipeHandlers = useMySwipeHandlers('', 'section3', +50, -100, true);
-
   return (
-    <div id="section4" {...swipeHandlers}>
+    <div id="section4">
       <SectionBenefitsMobile
         title="Porquê ter uma casa inteligente?"
         overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."

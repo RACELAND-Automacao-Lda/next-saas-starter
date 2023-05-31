@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export interface RedirectButtonInteractiveProps {
   url: string;
   children: React.ReactNode;
+  svg: string;
 }
 
 const RedirectButtonInteractive: React.FC<RedirectButtonInteractiveProps> = ({ url, children, svg }) => {
