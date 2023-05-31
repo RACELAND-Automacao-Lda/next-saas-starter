@@ -97,7 +97,7 @@ const DivisionContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(50vh - 30px);
+  min-height: calc(50vh - 30px);
 `;
 
 const ContentContainer = styled.div`
