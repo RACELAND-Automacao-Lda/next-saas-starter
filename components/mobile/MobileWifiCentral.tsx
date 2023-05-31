@@ -99,6 +99,7 @@ const WifiCentralContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 5rem;
 `;
 
 const ContentContainer = styled.div`

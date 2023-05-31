@@ -8,9 +8,7 @@ import Collapse from '../Collapse';
 
 interface MobileServiceDropdownProps {
   isOpen?: boolean;
-  reverse?: boolean;
   imagePath?: string;
-  fullImagePath?: string;
   imageAlt?: string;
   title?: string;
   subtitle?: string;
@@ -19,9 +17,7 @@ interface MobileServiceDropdownProps {
 
 export default function MobileServiceDropdown({
   isOpen,
-  reverse,
   imagePath,
-  fullImagePath,
   imageAlt,
   title,
   subtitle,
@@ -32,57 +28,46 @@ export default function MobileServiceDropdown({
   const isActive = !hasCollapsed;
   return (
     <AccordionWrapper>
-      {!isActive ? (
-        <Wrapper reverse={reverse} style={{ flexDirection: reverse ? 'row-reverse' : 'row' }}>
-          <TitleWrapper reverse={reverse}>
-            <Title>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
-            <StyledList>
-              <DottedList isOpened={false} dotlist={dotlist} />
-            </StyledList>
-            <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Saber mais</OpenAnchor>
-          </TitleWrapper>
-          <ImageContainer reverse={reverse}>
-            <NextImage src={imagePath} alt={imageAlt} layout="fill" />
-          </ImageContainer>
-        </Wrapper>
-      ) : (
-        <Opened reverse={reverse}>
-          <ImageContainerOpened fullImagePath={fullImagePath}>
-            <TitleOpened>{title}</TitleOpened>
-            <SubtitleOpened>{subtitle}</SubtitleOpened>
-            <TextWrapperOpened>
-              <DottedList isOpened={true} dotlist={dotlist} />
-            </TextWrapperOpened>
-          </ImageContainerOpened>
-        </Opened>
-      )}
+      <ImageContainer>
+        <NextImage src={imagePath} alt={imageAlt} layout="fill" />
+      </ImageContainer>
+      <Wrapper>
+        <TitleWrapper>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <StyledList style={{ marginBottom: '5rem' }}>
+            <DottedList isOpened={false} dotlist={dotlist} />
+          </StyledList>
+          {!isActive && <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Saber mais</OpenAnchor>}
+        </TitleWrapper>
+      </Wrapper>
+
       <Collapse isOpen={isActive} duration={300}>
-        {children}
-        <CollapseOpened>
-          <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Ver menos</OpenAnchor>
-        </CollapseOpened>
+        <Background>
+          {children}
+          <CollapseOpened>
+            <OpenAnchor onClick={() => setHasCollapsed((prev) => !prev)}>Ver menos</OpenAnchor>
+          </CollapseOpened>
+        </Background>
       </Collapse>
     </AccordionWrapper>
   );
 }
 
 const Title = styled.h1`
-  font-size: 36px;
+  font-size: 28px;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  margin-top: 5rem;
 `;
 
-const Subtitle = styled.h3`
-  font-size: 18px;
+const Subtitle = styled.span`
+  font-size: 17px;
   width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 `;
@@ -99,17 +84,18 @@ const TitleWrapper = styled.div<{ reverse?: boolean }>`
 const Wrapper = styled.div<{ reverse?: boolean }>`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
 `;
 
 const ImageContainer = styled.div<{ reverse?: boolean }>`
   overflow: hidden;
   position: relative;
-  width: 60%;
+  width: 100vw;
 
-  aspect-ratio: 5/2;
-  border-radius: ${(p) => (p.reverse ? '0rem 2rem 2rem 0rem' : '2rem 0rem 0rem 2rem')};
+  aspect-ratio: 6/4;
   box-shadow: var(--shadow-md);
   & > div {
     position: absolute;
@@ -120,84 +106,14 @@ const ImageContainer = styled.div<{ reverse?: boolean }>`
   }
 `;
 
-const Opened = styled.div<{ reverse?: boolean }>`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: ${(p) => (p.reverse ? 'flex-start' : 'flex-end')};
-`;
-
 const CollapseOpened = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-`;
+  align-items: flex-start;
 
-const ImageContainerOpened = styled.div<{ fullImagePath?: string }>`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 350px;
-
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  animation: slideInAnimation 0.5s forwards;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(90, 90, 90, 0.7);
-    z-index: 1;
-  }
-
-  background-image: url(${(p) => (p.fullImagePath ? p.fullImagePath : '')});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  @keyframes slideInAnimation {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-`;
-
-const TitleOpened = styled.h1`
-  font-size: 36px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  z-index: 2;
-`;
-
-const SubtitleOpened = styled.h3`
-  font-size: 18px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  z-index: 2;
-`;
-
-const TextWrapperOpened = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  color: white;
-  z-index: 2;
+  margin-left: 10%;
 `;
 
 const OpenAnchor = styled.a`
@@ -225,4 +141,10 @@ const AccordionWrapper = styled.div`
   ${media('<=desktop')} {
     width: 100%;
   }
+`;
+
+const Background = styled.div`
+  background: rgb(var(--inputBackground));
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
 `;
