@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 import styled from 'styled-components';
 import NextImage from 'next/image';
 import Image from 'next/image';
@@ -11,15 +11,22 @@ import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
 import RedirectButtonInteractive from '/components/mobile/RedirectButtonInteractive';
 import RedirectButton2 from '/components/mobile/RedirectButton2';
+import { ThemeContext } from '/contexts/ThemeContext';
+
 export interface MobileHomelandDomoticProps {
   imageUrl: string;
+  imageUrlDark: string;
 }
 
-export default function MobileHomelandDomotic({ imageUrl }: PropsWithChildren<MobileHomelandDomoticProps>) {
+export default function MobileHomelandDomotic({ imageUrl, imageUrlDark }: PropsWithChildren<MobileHomelandDomoticProps>) {
+  const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
+
   return (
     <Wrapper>
       <SectionTitleWrapper>
-        <NImage src={imageUrl} alt="Homeland" width="50" height="50" />
+        {themeMode === 'light' && <NImage src={imageUrl} alt="Homeland" width="50" height="50" />}
+        {themeMode === 'dark' && <NImage src={imageUrlDark} alt="Homeland" width="50" height="50" />}
+
         <CustomSectionTitle>Homeland</CustomSectionTitle>
       </SectionTitleWrapper>
       <CustomOverTitle>A sua casa na palma da sua mão</CustomOverTitle>
@@ -41,6 +48,7 @@ export default function MobileHomelandDomotic({ imageUrl }: PropsWithChildren<Mo
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 5rem 0;
   height: calc(50vh - 6rem);
   background: rgb(var(--inputBackground));
@@ -63,28 +71,29 @@ const GroupDiv = styled.div`
 const CustomSectionTitle = styled(SectionTitle)`
   font-size: 44px;
   margin-left: 1rem;
+  line-height: 1.1;
 `;
 
 const CustomOverTitle = styled(OverTitle)`
+  text-align: center;
   font-size: 16px;
   margin-top: 1.5rem;
   margin-bottom: 30px;
-  margin-left: 5%;
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   padding: 0 10%;
 `;
 
 const SectionTitleWrapper = styled(ContainerFull)`
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   max-height: 60px;
   flex-direction: row;
   width: 340px;

@@ -4,7 +4,7 @@ import { media } from 'utils/media';
 const SectionTitle = styled.div`
   font-size: 5.2rem;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.5;
   letter-spacing: -0.03em;
   text-align: center;
 

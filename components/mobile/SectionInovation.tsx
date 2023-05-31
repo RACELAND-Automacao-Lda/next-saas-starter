@@ -29,7 +29,7 @@ export default function SectionInovationMobile({ title, titleBold, overTitle }: 
 const Title = styled.h1`
   font-size: 44px;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.5;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
   z-index: 2;

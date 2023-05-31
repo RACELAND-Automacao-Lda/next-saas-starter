@@ -54,7 +54,7 @@ const Title = styled.h1`
   text-align: left;
   font-size: 44px;
   font-weight: bold;
-  line-height: 1.1;
+  line-height: 1.5;
   letter-spacing: -0.03em;
   display: inline-block;
   color: rgb(var(--textSecondary));

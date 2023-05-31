@@ -1,6 +1,6 @@
 import NextImage from 'next/image';
 import NextLink from 'next/link';
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 import Lottie from 'react-lottie-player';
 import styled from 'styled-components';
 import Button from 'components/Button';
@@ -11,15 +11,19 @@ import Container from './Container';
 import OverTitle from './OverTitle';
 import RichText from './RichText';
 import RedirectButton from '/components/RedirectButton2';
+import { ThemeContext } from '/contexts/ThemeContext';
 
 export interface HomelandSectionProps {
   imageUrl: string;
+  imageUrlDark: string;
   title: string;
   subtitle: string;
   reversed?: boolean;
 }
 
-export default function HomelandSection({ imageUrl, title, subtitle, reversed }: PropsWithChildren<HomelandSectionProps>) {
+export default function HomelandSection({ imageUrl, imageUrlDark, title, subtitle, reversed }: PropsWithChildren<HomelandSectionProps>) {
+  const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
+
   return (
     <Wrapper>
       <SectionSvgWrapper reversed={reversed}>
@@ -35,7 +39,8 @@ export default function HomelandSection({ imageUrl, title, subtitle, reversed }:
           </ButtonsRedirectGroup>
         </ContentContainer>
         <ImageContainer>
-          <NewImage src={imageUrl} alt={title} width="450" height="450" />
+          {themeMode === 'light' && <NewImage src={imageUrl} alt={title} width="450" height="450" />}
+          {themeMode === 'dark' && <NewImage src={imageUrlDark} alt={title} width="450" height="450" />}
         </ImageContainer>
       </SectionSvgWrapper>
     </Wrapper>
