@@ -22,7 +22,7 @@ const footerItems: FooterItems = [
   },
   {
     title: 'Menções Legais',
-    items: [{ title: 'Política de privacidade', href: '/privacy', imageUrl: '/reclamacoes.svg' }],
+    items: [{ title: 'Política de privacidade', href: '/privacy-policy', imageUrl: '/reclamacoes.svg' }],
   },
 ];
 
@@ -97,7 +97,7 @@ function FooterList({ title, items }: SingleFooterList) {
 function ListItem({ title, href, imageUrl }: SingleFooterListItem) {
   const lines = title.split('\n');
 
-  if (href === '/privacy') {
+  if (href === '/privacy-policy') {
     return (
       <ListItemWrapperPrivacy>
         <NextLink href={href} passHref>

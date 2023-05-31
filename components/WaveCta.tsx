@@ -44,6 +44,11 @@ const CtaWrapper = styled.div`
 const Title = styled(SectionTitle)`
   color: rgb(var(--textSecondary));
   margin-bottom: 4rem;
+
+  ${media('<=tablet')} {
+    padding-top: 8rem;
+    line-height: 1.5;
+  }
 `;
 
 const ContainerDiv = styled(Container)`

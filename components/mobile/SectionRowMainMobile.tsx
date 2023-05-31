@@ -60,12 +60,12 @@ const CustomOverTitle = styled(OverTitle)`
 `;
 
 const ImageContainer = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   aspect-ratio: 1;
+  -webkit-flex: none !important;
 
   ${media('<=desktop')} {
     width: 100%;

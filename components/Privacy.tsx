@@ -127,11 +127,11 @@ const Bold = styled.span`
 `;
 
 const BulletPoint = styled.div`
-  width: 12px;
-  height: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: #4d91ff;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 0.5rem;
 `;
 
 const CustomOverTitle = styled(OverTitle)`

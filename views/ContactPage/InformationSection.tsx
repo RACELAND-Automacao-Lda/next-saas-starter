@@ -5,13 +5,22 @@ export default function InformationSection() {
     <Wrapper>
       <h3>Informações de contacto</h3>
       <p>
-        <span>Email:</span> automacao@raceland-sa.com
+        <span>
+          <b>Email:</b>
+        </span>{' '}
+        automacao@raceland-sa.com
       </p>
       <p>
-        <span>Morada:</span> R. Primeiro de Maio 614D, 4445-245 Alfena
+        <span>
+          <b>Morada:</b>
+        </span>{' '}
+        R. Primeiro de Maio 614D, 4445-245 Alfena
       </p>
       <p>
-        <span>Telefone:</span> +351 22 968 72 46
+        <span>
+          <b>Telefone:</b>
+        </span>{' '}
+        +351 22 968 72 46
       </p>
       <p>
         <i>(Chamada para rede fixa nacional)</i>

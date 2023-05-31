@@ -140,15 +140,14 @@ const CtaWrapper = styled.div`
 
 const SpanBullet = styled.span`
   margin-top: 6px;
-  width: 4%;
 `;
 
 const BulletPoint = styled.div`
-  width: 9px;
-  height: 9px;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: #4d91ff;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 0.5rem;
 `;
 
 const CustomOverTitle = styled(OverTitle)`
@@ -189,6 +188,7 @@ const Title = styled(SectionTitle)`
   color: rgb(var(--textPrimary));
   margin-bottom: 4rem;
   text-align: left !important;
+  line-height: 1.5;
 `;
 
 const ContainerDiv = styled(Container)`

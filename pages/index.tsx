@@ -100,7 +100,7 @@ const Section2Mobile = () => {
 const Section3Mobile = () => {
   return (
     <div id="section3">
-      <InteractiveMobile imageUrl1="/icon.svg" imageUrl2="/Phone.png"></InteractiveMobile>
+      <InteractiveMobile imageUrl1="/icon.svg" imageUrl2="/Phone_2_4.png"></InteractiveMobile>
     </div>
   );
 };

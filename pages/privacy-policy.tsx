@@ -1,123 +1,432 @@
 import styled from 'styled-components';
-import Page from 'components/Page';
-import RichText from 'components/RichText';
+import Button from 'components/Button';
+import Container from 'components/Container';
+import OverTitle from 'components/OverTitle';
+import SectionTitle from 'components/SectionTitle';
+import { media } from 'utils/media';
 
-export default function ContactPage() {
+export default function Privacy() {
   return (
-    <Page title="Privacy policy">
-      <PrivacyPolicyContainer>
-        <RichText>
-          <p>
-            Deserunt culpa consequat non nostrud esse cillum pariatur velit consequat. Est fugiat voluptate deserunt sint culpa sint.
-            Laboris irure veniam quis ea voluptate. Nulla ad proident ex excepteur. Sunt sint ex laborum dolor quis magna aliquip qui amet
-            nulla. Laboris proident aute exercitation irure esse id eu occaecat ad ipsum est. Dolor cillum Lorem occaecat enim veniam
-            ullamco cupidatat qui dolore exercitation Lorem eu quis magna. Esse cillum aliqua et laborum eu dolore consectetur. Exercitation
-            id non quis ex qui in dolore est est proident. Laborum nisi commodo fugiat nulla et magna veniam aliquip. Aliqua duis non
-            nostrud ea velit incididunt. Laboris nostrud incididunt laborum enim eu dolor. Culpa anim sit sit ea. Labore laborum et aute ex
-            est est excepteur labore voluptate deserunt. Amet ea laboris ea culpa dolor laborum consequat aliquip reprehenderit voluptate
-            non laboris ipsum. Quis excepteur pariatur est enim duis consectetur nulla cupidatat ipsum dolor nisi ipsum. Dolore dolor
-            nostrud aute dolore. Excepteur reprehenderit aliquip amet pariatur excepteur. Aliqua commodo nulla dolor ex nisi duis
-            reprehenderit sint aliqua in minim. Lorem amet quis non veniam ut reprehenderit aliquip mollit do ullamco pariatur.
-          </p>
-          <br />
-          <strong>
-            Reprehenderit aliquip minim commodo magna occaecat dolore labore mollit mollit do esse deserunt. Aliquip eu reprehenderit aute{' '}
-          </strong>
-          <ul>
-            <li>
-              Ipsum cillum amet aliqua laboris ut excepteur enim laborum veniam officia officia esse. Anim et voluptate qui quis cillum
-              labore ipsum incididunt consequat est ea exercitation et commodo. Consequat consequat amet officia sit non id occaecat
-              occaecat duis irure.
-            </li>
-            <li>Nostrud dolor pariatur dolore Lorem in aliqua sunt aliqua excepteur laboris exercitation proident officia.</li>
-            <li>Ut et voluptate consequat elit amet minim.</li>
-            <li>Reprehenderit et consequat ea minim est proident eu incididunt non laboris proident culpa consequat sint.</li>
-          </ul>
-
-          <table>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-              <th>Column 4</th>
-            </tr>
-            <tr>
-              <td>Dolor do culpa excepteur proident anim duis deserunt nulla dolor et tempor.</td>
-              <td>Eu enim qui ea nostrud minim.</td>
-              <td>Proident officia velit ut in est culpa non adipisicing excepteur exercitation aliqua.</td>
-              <td>Duis proident adipisicing magna aute sint adipisicing sit deserunt minim eu.</td>
-            </tr>
-            <tr>
-              <td>Nisi cillum culpa adipisicing cillum.</td>
-              <td>Proident nulla cillum aute occaecat mollit labore.</td>
-              <td>Non ex eiusmod tempor cupidatat consequat anim et veniam nisi sint fugiat pariatur irure.</td>
-              <td>Consectetur nisi culpa non ex ipsum deserunt magna est est magna.</td>
-            </tr>
-            <tr>
-              <td>Officia laboris anim voluptate incididunt mollit mollit.</td>
-              <td>Adipisicing est consectetur id esse nostrud culpa non exercitation cupidatat pariatur dolore amet.</td>
-              <td>Dolor ex est ad ut adipisicing irure nulla esse aliqua nisi ipsum id aliqua.</td>
-              <td>Proident anim consequat enim sit sint pariatur.</td>
-            </tr>
-            <tr>
-              <td>Sint anim sint deserunt in elit ad Lorem dolore tempor.</td>
-              <td>Consequat nostrud irure anim do ex dolor amet ea dolore incididunt esse et cupidatat.</td>
-              <td>Eu nostrud occaecat incididunt deserunt Lorem ad Lorem elit.</td>
-              <td>Id ullamco in ad adipisicing magna elit ea minim sunt esse adipisicing.</td>
-            </tr>
-            <tr>
-              <td>Ea adipisicing ut nulla aute dolore quis in reprehenderit qui ipsum Lorem magna.</td>
-              <td>Irure ex dolore consequat mollit Lorem nostrud velit irure.</td>
-              <td>Dolore minim ad esse occaecat.</td>
-              <td>Qui id tempor ut culpa.</td>
-            </tr>
-            <tr>
-              <td>Ea ut esse non dolor do cupidatat.</td>
-              <td>Deserunt pariatur minim nisi elit ipsum officia irure id culpa ipsum.</td>
-              <td>Ea cillum voluptate consectetur et reprehenderit mollit ut excepteur exercitation do fugiat duis qui.</td>
-              <td>Id laborum officia aliqua ut nulla mollit.</td>
-            </tr>
-            <tr>
-              <td>Laborum et et sint ad incididunt amet aliqua commodo esse proident.</td>
-              <td>Velit aute proident aliqua consequat minim laborum reprehenderit reprehenderit eiusmod amet in aute.</td>
-              <td>Adipisicing adipisicing consequat incididunt officia in eu minim non cupidatat nulla nostrud sint.</td>
-              <td>Excepteur minim ea ex commodo nisi aute nostrud cupidatat consectetur.</td>
-            </tr>
-            <tr>
-              <td>Anim elit aliquip elit mollit pariatur consectetur commodo.</td>
-              <td>Consequat cupidatat sit sit quis labore culpa in duis duis amet elit.</td>
-              <td>Laborum Lorem pariatur id adipisicing minim.</td>
-              <td>Deserunt Lorem do id ea aliquip sunt.</td>
-            </tr>
-            <tr>
-              <td>Laborum aute laborum elit adipisicing velit commodo occaecat amet laborum.</td>
-              <td>Dolor voluptate duis elit id.</td>
-              <td>Excepteur sunt duis id officia id reprehenderit enim exercitation dolor.</td>
-              <td>Et excepteur duis adipisicing laboris labore adipisicing id dolor adipisicing exercitation eu nisi.</td>
-            </tr>
-            <tr>
-              <td>Esse consequat commodo irure elit nostrud esse ut magna commodo ipsum.</td>
-              <td>Exercitation exercitation ipsum qui aute ad commodo exercitation aliquip nisi aute Lorem in nulla.</td>
-              <td>Sint cillum esse quis mollit fugiat incididunt officia adipisicing do sint eu.</td>
-              <td>Consectetur aute ad aliquip eu Lorem proident irure aliqua aliqua officia reprehenderit reprehenderit amet.</td>
-            </tr>
-            <tr>
-              <td>Est Lorem exercitation eiusmod sit et.</td>
-              <td>Quis aliqua irure dolor do reprehenderit non id excepteur voluptate eiusmod veniam nostrud et elit.</td>
-              <td>Minim id sit officia consectetur irure id deserunt excepteur eu.</td>
-              <td>
-                Reprehenderit pariatur reprehenderit voluptate cillum minim tempor elit sint eiusmod ullamco id incididunt officia dolore.
-              </td>
-            </tr>
-          </table>
-        </RichText>
-      </PrivacyPolicyContainer>
-    </Page>
+    <>
+      <CtaWrapper>
+        <ContainerDiv>
+          <Title>Política de Privacidade</Title>
+          <CustomOverTitle>
+            Com esta Declaração de Compromisso, queremos tornar claro e explícito o nosso comprometimento para com a privacidade, segurança
+            e proteção de dados pessoais de candidatos a vagas de emprego, colaboradores e formandos, clientes, fornecedores, prestadores de
+            serviços e parceiros que cooperam com esta entidade, bem como dados pessoais de clientes e potenciais clientes assegurando que
+            todos os que tratam dados pessoais em nome da Raceland Automação subscrevem e atuam de acordo com os princípios que lhe estão
+            subjacentes.
+          </CustomOverTitle>
+          <SubTitle>Política de privacidade de dados pessoais</SubTitle>
+          <CustomOverTitle>
+            A Raceland Automação. assume o compromisso de assegurar os níveis de proteção da privacidade de dados pessoais respeitando a
+            legislação e todos os normativos e orientações nacionais e europeias aplicáveis ao seu tratamento. Esta política de privacidade
+            aplica-se aos nossos parceiros, clientes e fornecedores e regula um enquadramento de entendimento acerca dos dados pessoais
+            recolhidos pela Raceland, conforme exigido por lei, incluindo as disposições do Regulamento Geral de Proteção de Dados da União
+            Europeia (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016 – doravante designado RGPD.
+          </CustomOverTitle>
+          <SubTitle>Responsável pelo tratamento</SubTitle>
+          <CustomOverTitle>
+            O Responsável pelo Tratamento é a Raceland Automação., entidade com sede na Rua 1o de Maio, nº 614-D, 4445-245 Alfena e NIPC
+            508140161.
+          </CustomOverTitle>
+          <SubTitle>Tratamento e Finalidade dos Dados Recolhidos</SubTitle>
+          <CustomOverTitle>
+            O tratamento de dados é realizado com base em fundamentos jurídicos adequados, que podem enquadrar-se em várias categorias,
+            incluindo:
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Consentimento expresso do titular dos dados (quando exigido pela lei aplicável);
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Execução de um contrato;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Obrigação legal;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            Para além das atividades listadas acima, no caso de o titular dos dados ser candidato a uma oferta de emprego e se candidatar à
+            vaga em questão, usaremos as informações descritas nesta política de privacidade para os seguintes fins:
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Proporcionar oportunidades de emprego e trabalho.
+          </CustomOverTitle>
+          <SubTitle>Dados dos Colaboradores e Formandos</SubTitle>
+          <CustomOverTitle>
+            A finalidade da recolha, armazenamento e tratamento de dados pessoais de colaboradores e formandos da Raceland é lícito ao
+            abrigo da execução do contrato de trabalho ou de formação/estágio assinado entre ambas as partes (Raceland Automação enquanto
+            entidade empregadora/formadora e colaborador/formando/estagiário). No âmbito desta finalidade, a Raceland Automação recolhe uma
+            seleção de dados pessoais, nomeadamente:
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Nome;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Morada;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Número Telefone e/ou Número de Telemóvel;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Pugnar pela ética e respeito nos negócios a realizar;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Endereço de e-mail;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Nacionalidade;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Género;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Experiência profissional e académica;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Número de identificação fiscal;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Número de identificação civil;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Número de Segurança Social;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Número de carta de condução;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Situação profissional;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Informações de localização geográfica, em quaisquer situações de viagem, trabalho ou residência;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Eventos e ações de ou com uma pessoa (ex.: logins de acesso a computador);
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Eventos e ações de ou com uma pessoa (ex.: logins de acesso a computador);
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Gastos, compras, aquisições no âmbito do exercício da função;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Físicas, fisiológicas e/ou genéticas (ex. dados biométricos – impressão digital e reconhecimento facial para acesso às
+            instalações da Raceland; Fotografia para cartão de acesso ou identificação interna);
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Ficha de aptidão médica;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Informações bancárias – número de identificação bancário ou IBAN.
+          </CustomOverTitle>
+          <SubTitle>Dados de Parceiros, Clientes e Fornecedores</SubTitle>
+          <CustomOverTitle>
+            A finalidade da recolha, armazenamento e tratamento de dados de parceiros clientes e fornecedores da Raceland Automação está
+            associada à execução do contrato assinado entre as partes, bem como a execução de eventuais contratos acessórios. Enquanto
+            Responsável pelo Tratamento, a Raceland Automação recolhe e usa os dados pessoais recolhidos, para os seguintes fins:
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Fornecer soluções de emprego e relacionar pessoas aos empregos;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Processar pagamentos;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Gerir as relações com clientes, parceiros e fornecedores;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Responder a perguntas e reclamações de indivíduos;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Responder a perguntas e reclamações de indivíduos;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Celebrar contratos de compra-e-venda, outros contratos, principais ou acessórios, e execução dos mesmos;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Registo os bens adquiridos juntos da entidade competente.
+          </CustomOverTitle>
+          <SubTitle>Dados de Potenciais Clientes</SubTitle>
+          <CustomOverTitle>
+            A finalidade da recolha, armazenamento e tratamento de dados de potenciais clientes está associada à execução do contrato e
+            Interesse legítimo [melhoria da qualidade de serviço] dos titulares dos dados recolhidos presencialmente.A Raceland recolhe e
+            armazena e trata os seguintes dados pessoais:
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Dados base para preparação de propostas;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Dados de identificação.
+          </CustomOverTitle>
+          <SubTitle>Tempo de Armazenamento dos Dados Pessoais</SubTitle>
+          <CustomOverTitle>
+            O armazenamento interno dos dados pessoais de colaboradores, formandos, candidatos, clientes, fornecedores e parceiros bem como
+            de clientes e potenciais clientes é determinado por um período de tempo específico e determinado (“limitação da conservação”). O
+            armazenamento de dados pessoais de candidatos a vagas de empresa da Raceland será mantido num período de dois anos. Após este
+            período de tempo, todos os dados pessoais (em formato físico e digital) serão eliminados e destruídos.
+          </CustomOverTitle>
+          <SubTitle>Dados de Colaboradores</SubTitle>
+          <CustomOverTitle>
+            Enquanto titular de dados, os candidatos, colaboradores e/ou formandos, clientes parceiros e fornecedores da Raceland podem
+            exercer, de acordo com os Artigos 15º a 22º do RGPD, os seguintes direitos específicos:
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito de acesso;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito à retificação;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito ao apagamento;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito à restrição do tratamento;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito à portabilidade dos dados;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito à oposição;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito a não ser sujeito a uma tomada de decisão individual automatizada;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <SpanBullet>
+              <BulletPoint />
+            </SpanBullet>
+            Direito a apresentar queixa perante uma autoridade de supervisão.
+          </CustomOverTitle>
+          <SubTitle>Atualizações à Nossa Política de Privacidade</SubTitle>
+          <CustomOverTitle>
+            A Política de Privacidade de Dados da Raceland Automática, incluindo quaisquer aditamentos a esta, poderá ser revista e alterada
+            de acordo com novas obrigações definidas pelo RGPD para refletir as alterações nas nossas práticas de privacidade. As
+            atualizações a esta política estarão disponíveis no website da empresa automacaoraceland.pt
+          </CustomOverTitle>
+          <SubTitle>Contactos</SubTitle>
+          <CustomOverTitleLast>
+            Se tiver dúvidas ou sugestões relativamente à nossa Política de Privacidade, ou se quiser exercer qualquer um dos seus direitos,
+            por favor contate-nos através dos seguintes meios:
+            <NewP>automacaoraceland.pt</NewP>
+            <NewP>Rua 1º de Maio, 614 -D4445-245 Alfena – Portugal</NewP>
+            <NewP>
+              Telefone: +351 22 968 72 46{' '}
+              <p>
+                <i>(Chamada para rede fixa nacional)</i>
+              </p>
+            </NewP>
+          </CustomOverTitleLast>
+        </ContainerDiv>
+      </CtaWrapper>
+    </>
   );
 }
 
-const PrivacyPolicyContainer = styled.div`
-  max-width: 90rem;
-  margin: auto;
-  overflow-x: auto;
+const CtaWrapper = styled.div`
+  padding-bottom: 16rem;
+
+  ${media('<=tablet')} {
+    padding-top: 8rem;
+    display: flex;
+    align-items: flex-start;
+  }
+`;
+
+const NewP = styled.p`
+  margin-top: 20px;
+`;
+
+const SpanBullet = styled.span`
+  margin-top: 6px;
+`;
+
+const BulletPoint = styled.div`
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #4d91ff;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+`;
+
+const CustomOverTitle = styled(OverTitle)`
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+`;
+
+const CustomOverTitleLast = styled(OverTitle)`
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+`;
+
+const SubTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: #4d91ff;
+  font-weight: bold;
+  font-size: 36px;
+  width: 100%;
+  align-items: flex-start;
+  margin: 2rem 0;
+
+  ${media('<=desktop')} {
+    font-size: 24px;
+    margin-top: 50px;
+  }
+`;
+
+const Title = styled(SectionTitle)`
+  color: rgb(var(--textPrimary));
+  margin-bottom: 6rem;
+  margin-top: 17rem;
+  font-size: 64px;
+
+  ${media('<=desktop')} {
+    font-size: 44px;
+    text-align: left;
+    margin-top: 2rem;
+  }
+`;
+
+const ContainerDiv = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const NewButton = styled(Button)`
+  margin-top: 25px;
+  width: 295px;
+  font-size: 16px;
 `;
