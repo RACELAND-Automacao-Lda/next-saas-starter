@@ -5,11 +5,14 @@ import FullPage from 'components/FullPage';
 import HomelandBenefits from 'components/HomelandBenefits';
 import HomelandHeaderSection from 'components/HomelandHeaderSection';
 import HomelandSection from 'components/HomelandSection';
+import MobileCatalogSection from 'components/mobile/MobileCatalogSection';
 import MobileDropdownSectionSvg from 'components/mobile/MobileDropdownSectionSvg';
 import MobileHomelandBenefits from 'components/mobile/MobileHomelandBenefits';
 import MobileHomelandHeader from 'components/mobile/MobileHomelandHeader';
 import MobileServiceDropdown from 'components/mobile/MobileServiceDropdown';
+import MobileHomelandDomotic from 'components/mobile/MobileHomelandDomotic';
 import MobileWifiCentral from 'components/mobile/MobileWifiCentral';
+import SectionBenefitsMobile from 'components/mobile/SectionBenefitsMobile';
 import SectionBenefits from 'components/SectionBenefits';
 import SectionTitle from 'components/SectionTitle';
 import ServiceCatalog from 'components/ServiceCatalog';
@@ -19,7 +22,6 @@ import WifiCentral from 'components/WifiCentral';
 import isMobile from 'hooks/isMobile';
 import lottieJson from '/public/domotica/homeland.json';
 import MobileLottieJson from '/public/domotica/HomelandMobile.json';
-import SectionBenefitsMobile from 'components/mobile/SectionBenefitsMobile';
 
 export default function FeaturesPage() {
   console.log('Mobile', isMobile());
@@ -221,11 +223,12 @@ export default function FeaturesPage() {
                 ></MobileDropdownSectionSvg>
               </MobileServiceDropdown>
             </ServicesWrapper>
-            <ServiceCatalog />
-                  <SectionBenefitsMobile
-        title="Porquê ter uma casa inteligente?"
-        overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
-      ></SectionBenefitsMobile>
+            <MobileCatalogSection />
+            <MobileHomelandDomotic imageUrl="/domotica/Homeland_preto.svg" />
+            <SectionBenefitsMobile
+              title="Porquê ter uma casa inteligente?"
+              overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+            ></SectionBenefitsMobile>
           </>
         ) : (
           <>
