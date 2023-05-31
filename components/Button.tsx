@@ -10,7 +10,7 @@ const Button = styled.a<ButtonProps>`
   text-decoration: none;
   text-align: center;
   background: ${(p) => (p.transparent ? 'transparent' : 'rgb(var(--primary))')};
-  padding: 1.75rem 2.25rem;
+  padding: 1.3rem 2.25rem;
   font-size: 1.2rem;
   color: ${(p) => (p.transparent ? 'rgb(var(--text))' : 'rgb(var(--textSecondary))')};
   text-transform: uppercase;

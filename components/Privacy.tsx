@@ -26,6 +26,10 @@ export default function Privacy() {
           </CustomOverTitle>
           <CustomOverTitle>
             <BulletPoint />
+            Priveligiar a mobilidade e pluridisciplinaridade;
+          </CustomOverTitle>
+          <CustomOverTitle>
+            <BulletPoint />
             Promoção de um ambiente de trabalho inspirador que propicie o espírito de equipa, a comunicação aberta e uma mentalidade
             orientada para os processos e para a inovação;
           </CustomOverTitle>

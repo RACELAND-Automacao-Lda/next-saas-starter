@@ -104,7 +104,7 @@ const ButtonDiv = styled.div`
 `;
 
 const NewButton = styled(Button)`
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
   font-size: 16px;
 `;
