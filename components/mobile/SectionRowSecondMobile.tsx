@@ -42,7 +42,7 @@ const CustomOverTitle = styled(OverTitle)`
 `;
 
 const ImageContainer = styled.div`
-  flex: 1;
+  -webkit-flex: none !important;
   display: flex;
   justify-content: center;
   align-items: center;

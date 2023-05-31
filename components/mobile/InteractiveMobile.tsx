@@ -11,6 +11,7 @@ import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
 import RedirectButtonInteractive from '/components/mobile/RedirectButtonInteractive';
+import RedirectButton2 from '/components/mobile/RedirectButton2';
 
 export interface InteractiveMobileProps {
   imageUrl1: string;
@@ -48,12 +49,9 @@ export default function InteractiveMobile({ imageUrl1, imageUrl2 }: PropsWithChi
                 <ButtonsRedirectGroup>
                   <RedirectButtonInteractive
                     url="https://play.google.com/store/apps/details?id=io.homeland.companion.android&hl=pt-PT"
-                    svg="/Google Play.png"
+                    svg="/GooglePlayMobile.svg"
                   ></RedirectButtonInteractive>
-                  <RedirectButtonInteractive
-                    url="https://apps.apple.com/pt/app/homeland/id1658547571"
-                    svg="/App Store.png"
-                  ></RedirectButtonInteractive>
+                  <RedirectButton2 url="https://apps.apple.com/pt/app/homeland/id1658547571" svg="/PlayStoreMobile.svg"></RedirectButton2>
                 </ButtonsRedirectGroup>
               </GroupDiv>
             </ContentContainer>

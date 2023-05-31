@@ -45,6 +45,7 @@ const Title = styled.h1`
   line-height: 1.1;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
+  z-index: 2;
 
   ${media('<=tablet')} {
     font-size: 4.6rem;

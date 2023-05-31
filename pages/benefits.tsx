@@ -85,7 +85,7 @@ export default function BenefitsPage() {
             overTitle="Serviços de domótica pode aumentar o valor da sua casa, tornando-a mais atraente para potenciais compradores se  decidir vendê-la no futuro."
           ></SectionRowMainMobile>
           <ContainerButton>
-            <Title>Interessado em trazer o futuro para a sua casa?</Title>
+            <TitleBenefits>Interessado em trazer o futuro para a sua casa?</TitleBenefits>
             <NextLink href="/domotic" passHref>
               <NewButton>Ver Serviços</NewButton>
             </NextLink>
@@ -105,6 +105,12 @@ const NewButton = styled(Button)`
 const Title = styled(SectionTitle)`
   color: rgb(var(--text));
   margin-bottom: 4rem;
+`;
+
+const TitleBenefits = styled(SectionTitle)`
+  color: rgb(var(--text));
+  margin-bottom: 4rem;
+  line-height: 1.5;
 `;
 
 const ContainerButton = styled(Container)`

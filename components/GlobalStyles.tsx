@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 .next-dark-theme {
   --background: 26,32,44;
   --secondBackground: 45,55,72;
-  --text: 237,237,238;
+  --text: 255,255,255;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
   --secondary: 10,18,30;

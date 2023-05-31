@@ -22,15 +22,21 @@ export default function SectionDistinct({ title, overTitle1, overTitle2, overTit
               <Title>{title}</Title>
               <ContentContainer>
                 <CustomOverTitle>
-                  <BulletPoint />
+                  <SpanBullet>
+                    <BulletPoint />
+                  </SpanBullet>
                   <Text>{overTitle1}</Text>
                 </CustomOverTitle>
                 <CustomOverTitle>
-                  <BulletPoint />
+                  <SpanBullet>
+                    <BulletPoint />
+                  </SpanBullet>
                   <Text>{overTitle2}</Text>
                 </CustomOverTitle>
                 <CustomOverTitle>
-                  <BulletPoint2 />
+                  <SpanBullet>
+                    <BulletPoint />
+                  </SpanBullet>
                   <Text>{overTitle3}</Text>
                 </CustomOverTitle>
               </ContentContainer>
@@ -46,25 +52,20 @@ const CustomOverTitle = styled(OverTitle)`
   font-size: 16px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1rem;
 `;
 
 const BulletPoint = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: #4d91ff;
   border-radius: 50%;
-  margin-right: 7px;
+  margin-right: 0.5rem;
 `;
 
-const BulletPoint2 = styled.div`
-  width: 15px;
-  height: 10px;
-  background-color: #4d91ff;
-  border-radius: 50%;
-  margin-right: 7px;
-  margin-bottom: 22px;
+const SpanBullet = styled.span`
+  margin-top: 6px;
 `;
 
 const Text = styled.span`

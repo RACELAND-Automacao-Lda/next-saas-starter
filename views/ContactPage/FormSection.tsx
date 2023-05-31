@@ -160,9 +160,11 @@ const InputGroup = styled.div`
 const InputStack = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 
   & > *:not(:first-child) {
     margin-top: 0.5rem;
+    max-width: 64vw;
   }
   ${media.tablet` {
     width: 100%;

@@ -29,20 +29,17 @@ const PARTNER_LOGOS_dark = [
   '6_MikroTik.png',
   '7_Wago.png',
   '8_Siemens.png',
-  '9_Ubuntu.png',
+  '9 _Ubuntu.png',
 ];
 
 export default function Partners() {
   const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
-
-  console.log('themeMode', themeMode);
-
   return (
     <PartnersWrapper>
-      <Title>official partners with</Title>
+      <Title>os nossos parceiros</Title>
       <Swiper
         modules={[Autoplay]}
-        slidesPerView={6}
+        slidesPerView={9}
         spaceBetween={30}
         loop={true}
         autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
@@ -81,7 +78,7 @@ const Title = styled.h3`
   line-height: 0;
   text-transform: uppercase;
   text-align: center;
-  opacity: 0.8;
+  color: rgb(var(--text));
 
   ${media('<=desktop')} {
     line-height: 1.5;
