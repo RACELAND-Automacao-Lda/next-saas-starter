@@ -19,6 +19,7 @@ import WifiCentral from 'components/WifiCentral';
 import isMobile from 'hooks/isMobile';
 import lottieJson from '/public/domotica/homeland.json';
 import MobileLottieJson from '/public/domotica/HomelandMobile.json';
+import SectionBenefitsMobile from 'components/mobile/SectionBenefitsMobile';
 
 export default function FeaturesPage() {
   console.log('Mobile', isMobile());
@@ -221,6 +222,10 @@ export default function FeaturesPage() {
               </MobileServiceDropdown>
             </ServicesWrapper>
             <ServiceCatalog />
+                  <SectionBenefitsMobile
+        title="Porquê ter uma casa inteligente?"
+        overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+      ></SectionBenefitsMobile>
           </>
         ) : (
           <>
