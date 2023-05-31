@@ -224,7 +224,7 @@ export default function FeaturesPage() {
               </MobileServiceDropdown>
             </ServicesWrapper>
             <MobileCatalogSection />
-            <MobileHomelandDomotic imageUrl="/domotica/Homeland_preto.svg" />
+            <MobileHomelandDomotic imageUrlDark="/icon.svg" imageUrl="/domotica/Homeland_preto.svg" />
             <SectionBenefitsMobile
               title="Porquê ter uma casa inteligente?"
               overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
@@ -451,6 +451,7 @@ export default function FeaturesPage() {
             <ServiceCatalog />
             <HomelandSection
               imageUrl="/domotica/Homeland.svg"
+              imageUrlDark="/domotica/Homeland_2.svg"
               title="Homeland"
               subtitle="A sua casa na palma da sua mão"
               reversed={false}
@@ -475,10 +476,12 @@ const MobileTitle = styled.h1`
   -webkit-line-clamp: 1;
   text-align: left;
   margin-top: 5rem;
+  line-height: 1.5;
 `;
 
 const Title = styled.h1`
   font-size: 52px;
+  line-height: 1.5;
   width: 100%;
   overflow: hidden;
   display: -webkit-box;
