@@ -1,16 +1,12 @@
 import NextImage from 'next/image';
-import NextLink from 'next/link';
 import React, { PropsWithChildren, useContext } from 'react';
-import Lottie from 'react-lottie-player';
 import styled from 'styled-components';
-import Button from 'components/Button';
-import isMobile from 'hooks/isMobile';
 import { media } from 'utils/media';
-import Partners from 'views/HomePage/Partners';
 import Container from './Container';
 import OverTitle from './OverTitle';
-import RichText from './RichText';
+// @ts-ignore
 import RedirectButton from '/components/RedirectButton2';
+// @ts-ignore
 import { ThemeContext } from '/contexts/ThemeContext';
 
 export interface HomelandSectionProps {
@@ -60,18 +56,8 @@ const Title = styled.h1`
   }
 `;
 
-const TitleBold = styled(Title)`
-  color: #4d91ff;
-`;
-
 const CustomOverTitle = styled(OverTitle)`
   font-size: 36px;
-`;
-
-const NewButton = styled(Button)`
-  margin-top: 50px;
-  width: 295px;
-  font-size: 16px;
 `;
 
 const ImageContainer = styled.div`

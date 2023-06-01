@@ -6,6 +6,7 @@ import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+// @ts-ignore
 import { ThemeContext } from '/contexts/ThemeContext';
 
 const PARTNER_LOGOS = [
