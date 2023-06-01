@@ -17,6 +17,7 @@ import Logo from './Logo';
 import LogoDark from './LogoDark';
 import LogoMobile from './mobile/LogoMobile';
 import LogoMobileDark from './mobile/LogoMobileDark';
+// @ts-ignore
 import { ThemeContext } from '/contexts/ThemeContext';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });

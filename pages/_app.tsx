@@ -10,6 +10,7 @@ import Head from 'next/head';
 import { ColorModeScript } from 'nextjs-color-mode';
 import React, { PropsWithChildren, useState } from 'react';
 import { TinaEditProvider } from 'tinacms/dist/edit-state';
+// @ts-ignore
 import { ThemeContext } from '/contexts/ThemeContext';
 
 import Footer from 'components/Footer';

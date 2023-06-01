@@ -1,6 +1,7 @@
 import { ColorModeStyles, useColorModeValue, useColorSwitcher } from 'nextjs-color-mode';
 import styled from 'styled-components';
 import { useContext, useEffect } from 'react';
+// @ts-ignore
 import { ThemeContext } from '/contexts/ThemeContext';
 
 export default function ColorSwitcher() {
