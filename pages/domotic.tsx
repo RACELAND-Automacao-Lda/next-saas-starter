@@ -61,7 +61,7 @@ export default function FeaturesPage() {
                 Tudo o que precisa para a sua casa
               </SectionTitle>
               <MobileServiceDropdown
-                imagePath="/domotica/services/Iluminacao/mobileilumincao.png"
+                imagePath="/domotica/services/Iluminacao/mobileiluminacao.png"
                 imageAlt="Iluminação"
                 title="Iluminação"
                 subtitle="A melhor forma de dar vida a sua casa"
