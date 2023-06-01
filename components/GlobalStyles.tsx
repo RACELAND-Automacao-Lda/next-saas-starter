@@ -12,7 +12,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 
 .next-light-theme {
-  --background: 251,251,253;
+  --background: 255,255,255;
   --secondBackground: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;
@@ -20,27 +20,29 @@ export const GlobalStyle = createGlobalStyle`
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 255,255,255;
-  --inputBackground: 255,255,255;
+  --inputBackground: 249, 249, 250;
   --navbarBackground: 255,255,255;
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: #243A5A;
+  --dropdownColor: 249, 249, 250;
 }
 
 .next-dark-theme {
   --background: 26,32,44;
   --secondBackground: 45,55,72;
-  --text: 237,237,238;
+  --text: 255,255,255;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
-  --inputBackground: 45,55,72;
+  --inputBackground: 26,32,44;
   --navbarBackground: 45,55,72;
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;
+  --dropdownColor: 58,70,88;
 }
 
 :root {
@@ -115,7 +117,7 @@ body {
   line-height: 1.5;
   font-family: var(--font);
   color: rgb(var(--text));
-  background: rgb(var(--background));
+  background: rgb(var(--navbarBackground));
   font-feature-settings: "kern";
 }
 
@@ -131,7 +133,6 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block;
 }
 

@@ -2,8 +2,10 @@ import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
+import isMobile from 'hooks/isMobile';
 import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
 import { NavItems, SingleNavItem } from 'types';
 import { media } from 'utils/media';
@@ -12,6 +14,10 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
+import LogoDark from './LogoDark';
+import LogoMobile from './mobile/LogoMobile';
+import LogoMobileDark from './mobile/LogoMobileDark';
+import { ThemeContext } from '/contexts/ThemeContext';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
 
@@ -61,15 +67,30 @@ export default function Navbar({ items }: NavbarProps) {
     lastScrollY.current = currentScrollY;
   }
 
-  const isNavbarHidden = scrollingDirection === 'down';
-  const isTransparent = scrollingDirection === 'none';
+  const isNavbarHidden = false && scrollingDirection === 'down';
+  const isTransparent = false && scrollingDirection === 'none';
+
+  const { themeMode, setTheme } = useContext<{ themeMode: string; setTheme: (themeMode: string) => void }>(ThemeContext);
+
+  console.log('themeMode', themeMode);
 
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
+            {!isMobile() ? (
+              <>
+                {themeMode === 'light' && <Logo />}
+                {themeMode === 'dark' && <LogoDark />}
+                Raceland Automação
+              </>
+            ) : (
+              <>
+                {themeMode === 'light' && <LogoMobile />}
+                {themeMode === 'dark' && <LogoMobileDark />}
+              </>
+            )}
           </LogoWrapper>
         </NextLink>
         <NavItemList>
@@ -134,6 +155,7 @@ const LogoWrapper = styled.a`
   text-decoration: none;
 
   color: rgb(var(--logoColor));
+  font-size: 20px;
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
@@ -150,7 +172,7 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
 
   a {
     display: flex;
-    color: ${(p) => (p.outlined ? 'rgb(var(--textSecondary))' : 'rgb(var(--text), 0.75)')};
+    color: ${(p) => (p.outlined ? 'rgb(var(--textSecondary))' : 'rgb(var(--text))')};
     letter-spacing: 0.025em;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
@@ -166,9 +188,9 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   display: flex;
   position: sticky;
   top: 0;
-  padding: 1.5rem 0;
+  padding: 0rem 0;
   width: 100%;
-  height: 8rem;
+  height: 60px;
   z-index: var(--z-navbar);
 
   background-color: rgb(var(--navbarBackground));

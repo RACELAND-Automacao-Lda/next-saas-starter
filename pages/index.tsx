@@ -1,19 +1,110 @@
-import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import styled from 'styled-components';
-import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
+import SectionSvgAnimation from 'components/SectionSvgAnimation';
+import SectionSvg from 'components/SectionSvg';
+import SectionBenefits from 'components/SectionBenefits';
+import SectionPartnersMobile from 'components/mobile/SectionPartnersMobile';
+import InteractiveMobile from 'components/mobile/InteractiveMobile';
+import SectionBenefitsMobile from 'components/mobile/SectionBenefitsMobile';
+import SectionInovation from 'components/mobile/SectionInovation';
 import { EnvVars } from 'env';
+import isMobile from 'hooks/isMobile';
 import { getAllPosts } from 'utils/postsFetcher';
-import Cta from 'views/HomePage/Cta';
-import Features from 'views/HomePage/Features';
-import FeaturesGallery from 'views/HomePage/FeaturesGallery';
-import Hero from 'views/HomePage/Hero';
-import Partners from 'views/HomePage/Partners';
-import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
-import Testimonials from 'views/HomePage/Testimonials';
+import Interactive from '/components/Interactive';
+import lottieJson from '/public/homepage/Header_3.json';
 
-export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+const Section1 = () => {
+  return (
+    <div id="section1">
+      <SectionSvgAnimation
+        svg={lottieJson}
+        loop={false}
+        title="Raceland Automação"
+        overTitle="Serviços de Automação e Consultoria"
+        width={700}
+        height={650}
+        top="-45%"
+      ></SectionSvgAnimation>
+    </div>
+  );
+};
+
+const Section2 = () => {
+  return (
+    <div id="section2">
+      <SectionSvg
+        imageUrl="/inovation.svg"
+        title="Nós somos a"
+        titleBold="inovação"
+        overTitle1="Os nossos princípios estão na privacidade e na ética."
+        overTitle2="Procurando sempre contribuir para a comunidade."
+        reversed={true}
+      ></SectionSvg>
+    </div>
+  );
+};
+
+const Section3 = () => {
+  return (
+    <div id="section3">
+      <Interactive imageUrl1="/icon.svg" imageUrl2="/Homeland.svg"></Interactive>
+    </div>
+  );
+};
+
+const Section4 = () => {
+  return (
+    <div id="section4">
+      <SectionBenefits
+        imageUrl="/3.png"
+        title1="Porquê ter uma"
+        title2="casa inteligente?"
+        overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+        reversed={true}
+      ></SectionBenefits>
+    </div>
+  );
+};
+
+const Section1Mobile = () => {
+  return (
+    <div id="section1">
+      <SectionPartnersMobile title="Raceland Automação" overTitle="Serviços de Automação e Consultoria" />
+    </div>
+  );
+};
+
+const Section2Mobile = () => {
+  return (
+    <div id="section2">
+      <SectionInovation
+        title="Nós somos a"
+        titleBold="inovação"
+        overTitle="Os nossos princípios estão na privacidade e na ética. Procurando sempre contribuir para a comunidade."
+      />
+    </div>
+  );
+};
+
+const Section3Mobile = () => {
+  return (
+    <div id="section3">
+      <InteractiveMobile imageUrl1="/icon.svg" imageUrl2="/Phone_2_4.png"></InteractiveMobile>
+    </div>
+  );
+};
+
+const Section4Mobile = () => {
+  return (
+    <div id="section4">
+      <SectionBenefitsMobile
+        title="Porquê ter uma casa inteligente?"
+        overTitle="Descubra as muitas vantagens da automação residencial e assuma o controle da sua casa como nunca antes."
+      ></SectionBenefitsMobile>
+    </div>
+  );
+};
+
+const Homepage = () => {
   return (
     <>
       <Head>
@@ -23,70 +114,28 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
         />
       </Head>
-      <HomepageWrapper>
-        <WhiteBackgroundContainer>
-          <Hero />
-          <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
-            </p>
-          </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
-              <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
-            </p>
-            <ul>
-              <li>Professional point 1</li>
-              <li>Professional remark 2</li>
-              <li>Professional feature 3</li>
-            </ul>
-          </BasicSection>
-        </WhiteBackgroundContainer>
-        <DarkerBackgroundContainer>
-          <Cta />
-          <FeaturesGallery />
-          <Features />
-          <Testimonials />
-          <ScrollableBlogPosts posts={posts} />
-        </DarkerBackgroundContainer>
-      </HomepageWrapper>
+      {!isMobile() ? (
+        <>
+          <Section1 />
+          <Section2 />
+          <Section3 />
+          <Section4 />
+        </>
+      ) : (
+        <>
+          <Section1Mobile />
+          <Section2Mobile />
+          <Section3Mobile />
+          <Section4Mobile />
+        </>
+      )}
     </>
   );
-}
+};
 
-const HomepageWrapper = styled.div`
-  & > :last-child {
-    margin-bottom: 15rem;
-  }
-`;
+export default Homepage;
 
-const DarkerBackgroundContainer = styled.div`
-  background: rgb(var(--background));
-
-  & > *:not(:first-child) {
-    margin-top: 15rem;
-  }
-`;
-
-const WhiteBackgroundContainer = styled.div`
-  background: rgb(var(--secondBackground));
-
-  & > :last-child {
-    padding-bottom: 15rem;
-  }
-
-  & > *:not(:first-child) {
-    margin-top: 15rem;
-  }
-`;
-
-export async function getStaticProps() {
+export async function getStaticProps({ req }) {
   return {
     props: {
       posts: await getAllPosts(),

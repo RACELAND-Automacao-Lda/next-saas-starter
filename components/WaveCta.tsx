@@ -20,19 +20,12 @@ export default function WaveCta() {
         ></path>
       </svg>
       <CtaWrapper>
-        <Container>
-          <Title>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</Title>
-          <CustomButtonGroup>
-            <Button onClick={() => setIsModalOpened(true)}>
-              Subscribe to the newsletter <span>&rarr;</span>
-            </Button>
-            <NextLink href="/features" passHref>
-              <OutlinedButton transparent>
-                Features <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
-          </CustomButtonGroup>
-        </Container>
+        <ContainerDiv>
+          <Title>Tem algo para nos dizer?</Title>
+          <NextLink href="/contact" passHref>
+            <NewButton>Contacte-nos</NewButton>
+          </NextLink>
+        </ContainerDiv>
       </CtaWrapper>
     </>
   );
@@ -51,13 +44,23 @@ const CtaWrapper = styled.div`
 const Title = styled(SectionTitle)`
   color: rgb(var(--textSecondary));
   margin-bottom: 4rem;
+
+  ${media('<=tablet')} {
+    padding-top: 8rem;
+    line-height: 1.5;
+  }
 `;
 
-const OutlinedButton = styled(Button)`
-  border: 1px solid rgb(var(--textSecondary));
-  color: rgb(var(--textSecondary));
-`;
-
-const CustomButtonGroup = styled(ButtonGroup)`
+const ContainerDiv = styled(Container)`
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  height: 200px;
+`;
+
+const NewButton = styled(Button)`
+  margin-top: 25px;
+  width: 295px;
+  font-size: 16px;
 `;
