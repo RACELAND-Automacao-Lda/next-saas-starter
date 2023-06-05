@@ -149,3 +149,8 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## 📝 License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/Blazity/next-saas-starter/blob/main/LICENSE.md) for more information.
+
+
+## Deploy to Google Cloud Run
+
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)

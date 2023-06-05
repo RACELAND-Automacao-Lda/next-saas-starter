@@ -1,7 +1,6 @@
 import { GoogleMap, Marker, MarkerF, useLoadScript } from '@react-google-maps/api';
 import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import ContainerFull from 'components/ContainerFull';
 import PageContacts from 'components/PageContacts';
 import SectionTitle from 'components/SectionTitle';
 import isMobile from 'hooks/isMobile';
@@ -85,7 +84,7 @@ const MapContainer = styled.div`
   }
 `;
 
-function Section1Mobile({ mapCenter }) {
+function Section1Mobile({ mapCenter }: any) {
   return (
     <MapContainer>
       <GoogleMap
@@ -101,7 +100,7 @@ function Section1Mobile({ mapCenter }) {
   );
 }
 
-function Section2Mobile({ mapCenter }) {
+function Section2Mobile({ mapCenter }: any) {
   return (
     <MapContainer>
       <GoogleMap

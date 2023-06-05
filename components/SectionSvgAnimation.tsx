@@ -13,7 +13,7 @@ import RichText from './RichText';
 
 export interface SectionSvgProps {
   loop?: boolean;
-  svg: string;
+  svg: object;
   title: string;
   overTitle: string;
   reversed?: boolean;

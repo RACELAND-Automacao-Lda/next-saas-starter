@@ -9,7 +9,7 @@ import Collapse from './Collapse';
 interface ServiceDropdownProps {
   isOpen?: boolean;
   reverse?: boolean;
-  imagePath?: string;
+  imagePath: string;
   fullImagePath?: string;
   imageAlt?: string;
   title?: string;

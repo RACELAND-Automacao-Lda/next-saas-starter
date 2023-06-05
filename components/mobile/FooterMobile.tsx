@@ -4,6 +4,7 @@ import { FacebookIcon, LinkedinIcon } from 'react-share';
 import styled from 'styled-components';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+// @ts-ignore
 import RedirectButton from '/components/RedirectButton';
 
 type SingleFooterListItem = { title: string; href: string; imageUrl: string };

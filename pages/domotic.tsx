@@ -20,7 +20,9 @@ import ServiceDropdown from 'components/ServiceDropdown';
 import StyledList from 'components/StyledList';
 import WifiCentral from 'components/WifiCentral';
 import isMobile from 'hooks/isMobile';
+// @ts-ignore
 import lottieJson from '/public/domotica/homeland.json';
+// @ts-ignore
 import MobileLottieJson from '/public/domotica/HomelandMobile.json';
 
 export default function FeaturesPage() {

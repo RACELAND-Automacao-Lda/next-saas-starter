@@ -8,7 +8,7 @@ import Collapse from '../Collapse';
 
 interface MobileServiceDropdownProps {
   isOpen?: boolean;
-  imagePath?: string;
+  imagePath: string;
   imageAlt?: string;
   title?: string;
   subtitle?: string;

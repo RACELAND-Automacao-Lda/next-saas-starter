@@ -6,6 +6,7 @@ import Button from 'components/Button';
 export interface RedirectButtonProps {
   url: string;
   children: React.ReactNode;
+  svg: string;
 }
 
 const RedirectButton: React.FC<RedirectButtonProps> = ({ url, children, svg }) => {

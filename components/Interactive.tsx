@@ -4,11 +4,11 @@ import NextLink from 'next/link';
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import Button from 'components/Button';
-import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
+// @ts-ignore
 import RedirectButton from '/components/RedirectButton';
 
 export interface InteractiveProps {
@@ -16,7 +16,7 @@ export interface InteractiveProps {
   imageUrl2: string;
 }
 
-export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<SectionSvgProps>) {
+export default function Interactive({ imageUrl1, imageUrl2 }: PropsWithChildren<InteractiveProps>) {
   return (
     <CtaWrapper>
       <Container>

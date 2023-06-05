@@ -35,7 +35,7 @@ const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
 function MyApp({ Component, pageProps }: AppProps) {
   const [themeMode, setColorMode] = useState('light');
 
-  const setTheme = (newMode) => {
+  const setTheme = (newMode: any) => {
     setColorMode(newMode);
   };
   return (

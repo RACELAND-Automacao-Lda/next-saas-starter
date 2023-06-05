@@ -6,24 +6,6 @@ import Input from 'components/Input';
 //import { media } from 'utils/media';
 import MailSentState from '../../components/MailSentState';
 
-const media = {
-  tablet: (...args) => css`
-    @media (max-width: 870px) {
-      ${css(...args)}
-    }
-  `,
-  landscape: (...args) => css`
-    @media only screen and (min-width: 870px) and (max-width: 1150px) and (orientation: landscape) {
-      ${css(...args)}
-    }
-  `,
-  portrait: (...args) => css`
-    @media (orientation: portrait) {
-      ${css(...args)}
-    }
-  `,
-};
-
 interface EmailPayload {
   name: string;
   email: string;
@@ -100,36 +82,35 @@ export default function FormSection() {
 const Wrapper = styled.div`
   flex: 2;
   width: 70%;
-  ${media.tablet` {
-    & {
+
+  @media (max-width: 870px) {
+
       display: flex;
       justify-content: center;
       width: 100%;
-    }
-  `}
+
+  }
 `;
 
 const NewInput = styled(Input)`
-  ${media.landscape` {
-    & {
+  @media only screen and (min-width: 920px) and (max-width: 1150px) and (orientation: landscape) {
+
       width: 27vw;
-    }
-  `}
+  }
 `;
 
 const Form = styled.form`
   & > * {
     margin-bottom: 2rem;
   }
-  ${media.tablet` {
-    & {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-  `}
+  @media (max-width: 870px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
 `;
 
 const InputGroup = styled.div`
@@ -144,7 +125,7 @@ const InputGroup = styled.div`
     flex: 1;
   }
 
-  ${media.tablet` {
+  @media (max-width: 870px) {
     flex-direction: column;
     width: 100%;
     & > *:first-child {
@@ -154,7 +135,8 @@ const InputGroup = styled.div`
     & > * {
       width: 100%;
     }
-  `}
+
+  }
 `;
 
 const InputStack = styled.div`
@@ -166,9 +148,11 @@ const InputStack = styled.div`
     margin-top: 0.5rem;
     max-width: 64vw;
   }
-  ${media.tablet` {
+
+  @media (max-width: 870px) {
     width: 100%;
-  `}
+
+  }
 `;
 
 const ErrorMessage = styled.p`

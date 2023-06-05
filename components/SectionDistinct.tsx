@@ -1,30 +1,23 @@
-import NextImage from 'next/image';
-import Image from 'next/image';
-import NextLink from 'next/link';
+
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import Button from 'components/Button';
-import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
-import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
-import RedirectButton from '/components/RedirectButton';
 
 export interface SectionDistinctProps {
   title: string;
   overTitle1: string;
   overTitle2: string;
   overTitle3: string;
-  reversed?: boolean;
 }
 
-export default function SectionDistinct({ title, overTitle1, overTitle2, overTitle3, reversed }: PropsWithChildren<SectionDistinctProps>) {
+export default function SectionDistinct({ title, overTitle1, overTitle2, overTitle3 }: PropsWithChildren<SectionDistinctProps>) {
   return (
     <CtaWrapper>
       <NewContainer>
         <Stack>
-          <SectionSvgWrapper reversed={reversed}>
+          <SectionSvgWrapper>
             <Title>{title}</Title>
             <ContentContainer>
               <CustomOverTitle>

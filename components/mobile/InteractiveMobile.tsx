@@ -10,7 +10,9 @@ import ContainerFull from 'components/ContainerFull';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
+// @ts-ignore
 import RedirectButtonInteractive from '/components/mobile/RedirectButtonInteractive';
+// @ts-ignore
 import RedirectButton2 from '/components/mobile/RedirectButton2';
 
 export interface InteractiveMobileProps {

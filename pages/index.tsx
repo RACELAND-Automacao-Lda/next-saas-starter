@@ -9,7 +9,9 @@ import SectionInovation from 'components/mobile/SectionInovation';
 import { EnvVars } from 'env';
 import isMobile from 'hooks/isMobile';
 import { getAllPosts } from 'utils/postsFetcher';
+// @ts-ignore
 import Interactive from '/components/Interactive';
+// @ts-ignore
 import lottieJson from '/public/homepage/Header_3.json';
 
 const Section1 = () => {
@@ -135,7 +137,7 @@ const Homepage = () => {
 
 export default Homepage;
 
-export async function getStaticProps({ req }) {
+export async function getStaticProps({ req }: any) {
   return {
     props: {
       posts: await getAllPosts(),

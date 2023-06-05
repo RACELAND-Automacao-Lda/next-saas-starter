@@ -1,19 +1,13 @@
-import NextImage from 'next/image';
-import NextLink from 'next/link';
 import React, { PropsWithChildren } from 'react';
 import Lottie from 'react-lottie-player';
 import styled from 'styled-components';
 import Button from 'components/Button';
-import isMobile from 'hooks/isMobile';
-import { media } from 'utils/media';
-import Partners from 'views/HomePage/Partners';
 import Container from './Container';
 import OverTitle from './OverTitle';
-import RichText from './RichText';
 
 export interface HomelandHeaderSectionProps {
   loop?: boolean;
-  svg: string;
+  svg: object;
   overTitle: string;
   reversed?: boolean;
   width: number;
