@@ -98,7 +98,8 @@ export default function BenefitsPage() {
 
 const NewButton = styled(Button)`
   margin-top: 25px;
-  width: 295px;
+  width: 80vw;
+  max-width: 295px;
   font-size: 16px;
 `;
 

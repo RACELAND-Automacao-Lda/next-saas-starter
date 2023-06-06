@@ -44,7 +44,9 @@ const Title = styled.h1`
 `;
 
 const NewButton = styled(Button)`
-  width: 295px;
+  width: 80vw;
+  max-width: 295px;
+  margin-top: 50px;
   font-size: 16px;
 `;
 

@@ -51,7 +51,8 @@ const CustomOverTitle = styled(OverTitle)`
 
 const NewButton = styled(Button)`
   margin-top: 20px;
-  width: 300px;
+  width: 80vw;
+  max-width: 295px;
   font-size: 16px;
 `;
 

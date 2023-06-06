@@ -136,7 +136,8 @@ const SectionTitleWrapper = styled(Container)`
   justify-content: center;
   max-height: 60px;
   flex-direction: row;
-  width: 340px;
+  width: 80vw;
+  max-width: 295px;
   padding: 0 !important;
 `;
 

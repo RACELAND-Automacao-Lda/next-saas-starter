@@ -85,6 +85,9 @@ const Wrapper = styled.div`
     right: 2rem;
     top: 2rem;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   .drawer-closed {

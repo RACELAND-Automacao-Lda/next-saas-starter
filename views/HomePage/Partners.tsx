@@ -46,6 +46,7 @@ export default function Partners() {
         autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false, waitForTransition: false, stopOnLastSlide: false }}
         speed={3000}
         breakpoints={{
+          280: { slidesPerView: 1},
           320: { slidesPerView: 2 },
           768: { slidesPerView: 4 },
           1025: { slidesPerView: 6 },
@@ -83,6 +84,10 @@ const Title = styled.h3`
 
   ${media('<=desktop')} {
     line-height: 1.5;
+  }
+
+  @media only-screen and (max-width: 280px) {
+    display: none;
   }
 `;
 

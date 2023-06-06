@@ -24,10 +24,10 @@ export default function MobileCatalogSection() {
 const CtaWrapper = styled.div`
   background: rgb(var(--secondary));
   margin-top: -1rem;
-  min-height: 50vh;
-  ${media('<=tablet')} {
-    padding-top: 8rem;
-  }
+  min-height: 50vh;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Title = styled(SectionTitle)`
@@ -37,7 +37,6 @@ const Title = styled(SectionTitle)`
   font-size: 44px;
 
   ${media('<=tablet')} {
-    padding-top: 8rem;
     line-height: 1.5;
   }
 `;

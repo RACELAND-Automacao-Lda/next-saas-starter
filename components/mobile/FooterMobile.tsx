@@ -105,7 +105,7 @@ function ListItem({ title, href, imageUrl }: SingleFooterListItem) {
           <u style={{ cursor: 'pointer', margin: '0 0 15px 0' }}>{title}</u>
         </NextLink>
         <RedirectButton
-          url="https://play.google.com/store/apps/details?id=io.homeland.companion.android&hl=pt-PT"
+          url="https://www.livroreclamacoes.pt/Pedido/Reclamacao"
           svg={imageUrl}
         ></RedirectButton>
       </ListItemWrapperPrivacy>
